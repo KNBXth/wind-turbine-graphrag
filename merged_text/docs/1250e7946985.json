@@ -1,0 +1,130 @@
+{
+  "doc_id": "1250e7946985",
+  "file_name": "29--GB_T 36273-2018 智能变电站继电保护和安全自动装置数字化接口技术规范.pdf",
+  "relative_path": "中国华能集团有限公司2025年度风电技术监督用标准\\3-风电继保监督标准\\29--GB_T 36273-2018 智能变电站继电保护和安全自动装置数字化接口技术规范.pdf",
+  "title": "29--GB_T 36273-2018 智能变电站继电保护和安全自动装置数字化接口技术规范",
+  "doc_type": "standard",
+  "source_summary": {
+    "has_text_clean": false,
+    "has_ocr_clean": true,
+    "selected_source_stats": {
+      "ocr_clean": 14
+    }
+  },
+  "page_count": 14,
+  "merged_text": "[PAGE 1]\nICS 29.240K 45中华人民共和国国家标准\nGB/T36273—2018\n智能变电站继电保护和安全自动装置数字化接口技术规范\nDigital interface technical specification forrelaying protection and security\nautomaticequipmentinsmartsubstation\n2018-06-07发布\n2019-01-01实施国家市场监督管理总局发布中国国家标准化管理委员会\n[PAGE 2]\nGB/T 36273—2018\n目次前言·\n1范围\n2规范性引用文件\n3术语和定义、缩略语·\n4总则……\n5虚端子接口规范\n6物理接口规范\n7压板配置.\n8过程层二次回路建模\n9对相关设备的要求\n10工程配置文件附录A（资料性附录）回路实例配置文件格式要求\n[PAGE 3]\nGB/T36273-2018\n前言本标准按照GB/T1.1一2009给出的规则起草。\n请注意本文件的某些内容可能涉及专利。本文件的发布机构不承担识别这些专利的责任。\n本标准由中国电力企业联合会提出并归口。\n本标准起草单位：中国电力工程顾问集团东北电力设计院有限公司、南京南瑞继保电气有限公司、\n国网江苏省电力公司电力科学研究院、国家电网公司国家电力调度控制中心、中国南方电网有限责任公司、国网重庆市电力公司、国网冀北电力有限公司、广东电网有限责任公司电力调度控制中心、电力规划总院有限公司、国网湖南省电力公司电力科学研究院、国网河南省电力公司电力科学研究院、贵州电网有限责任公司电力科学研究院、北京四方继保自动化股份有限公司、许继集团有限公司、国电南京自动化股份有限公司。\n本标准主要起草人：张忠华、吕航、高磊、李铁民、李力、蒋航、史泽兵、宋亮亮、曾志安、高旭、邓旭阳、\n陈志蓉、朱维钧、韩伟、王宇、孙晓勇、燕俊、王增超、姚亮、苏黎明、邓茂军。\n[PAGE 4]\nGB/T 36273-2018\n智能变电站继电保护和安全自动装置数字化接口技术规范\n1范围本标准规定了智能变电站继电保护和安全自动装置的虚端子接口规范、过程层物理接口规范、压板配置、过程层二次回路建模、对相关设备的要求、工程配置文件。\n本标准适用于智能变电站中110kV(66kV)及以上电压等级的各种继电保护和安全自动装置（以下简称“装置\"），110kV（66kV)以下电压等级的装置参照执行。\n2规范性引用文件下列文件对于本文件的应用是必不可少的。凡是注日期的引用文件，仅注日期的版本适用于本文件。凡是不注日期的引用文件，其最新版本（包括所有的修改单)适用于本文件。\nGB/T14285--2006继电保护和安全自动装置技术规程\nGB/T30155—2013智能变电站技术导则\nGB/T32890—2016继电保护IEC61850工程应用模型\nGB/T34132一2017智能变电站智能终端装置通用技术条件\nGB/T51071-2014330kV～750kV智能变电站设计规范\nDL/T282合并单元技术条件\nDL/T860（所有部分）变电站通信网络和系统\n3术语和定义、缩略语\n3.1术语和定义\nGB/T14285—2006、GB/T 30155—2013、GB/T 51071—2014、GB/T 51072-2014、DL/T 860、\nDL/T282界定的术语和定义适用于本文件。\n3.2缩略语下列缩略语适用于本文件。\nCID:IED实例配置（ConfiguredIEDDescription)\nCRC：循环冗余码校验（CyclicRedundancyCheck）\nGOOSE：面向通用对象的变电站事件（GenericObjectOrientedSubstationEvents)\nICD：IED能力描述（IEDCapabilityDescription)\nIED：智能电子设备（IntelligentElectronicDevice）\nSCD：全站系统配置（SubstationConfigurationDescription）\nSSD：系统规范描述（SystemSpecificationDescription）\n[PAGE 5]\nGB/T36273-2018\nSV：采样值(SampledValue)\n4总则\n4.1本标准旨在通过规范智能变电站继电保护和安全自动装置数字化接口，为继电保护和安全自动装置的设计、制造、运行、管理和维护工作提供有利条件，提升继电保护运行和管理水平。\n4.2装置应符合GB/T14285一2006的规定，满足“可靠性、选择性、灵敏性、速动性”的要求。\n4.3与双重化配置装置接口的合并单元、智能终端、过程层交换机等应遵循完全独立的原则。\n出、联闭锁信号等信息交互可通过GOOSE报文传输或直接电缆连接。装置与过程层设备的电压电流量等采样量可通过SV报文传输或直接电缆连接。\n4.5装置接入不同网络时，应采用相互独立的数据接口控制器。\n4.6在满足现场运行需求的前提下，宜简化二次设备之间的GOOSE软压板。\n4.7装置应具备通信中断、异常等状态的检测和告警功能。\n5虚端子接口规范\n5.1虚端子建模\n5.1.1GOOSE虚端子信息包括开关量输人、跳闸出口、信号开出、告警、联闭锁等信息，并应配置到\nDA层次。SV虚端子信息包括电流通道、电压通道及固有延时，并应配置到DO层次。\n5.1.2装置GOOSE及SV虚端子物理含义应采用中文描述，ICD文件中数据对象实例DOI应包含中文的“desc\"描述和“dU”属性赋值，两者应一致并能完整表达该数据对象具体意义。\n5.1.3装置所需的智能终端位置类GOOSE信号（断路器、刀闸）应采用双点信息传送，普通遥信和告警信号应采用单点信息传送，工作电压、内部工作温度等遥测信号宜采用浮点型数据类型传送。\n5.1.4SV输人虚端子模型应符合GB/T32890一2016中10.1的规定。\n5.1.5GOOSE输人虚端子模型应符合GB/T32890—2016中9.1的规定。\n5.2虚端子配置\n5.2.1智能终端应上送原始开人GOOSE信号，IED设备应根据各自需求完成所需信号合成。\n5.2.2输出信号受不同软压板控制时应形成相应的GOOSE输出虚端子，应在满足现场运行需求的前提下简化输出虚端子配置。\n5.2.3对于同一逻辑功能输人有连接多个外部端子的需求，输人虚端子的中文描述应用数字后缀区分。\n5.2.4对于桥断路器、母联断路器、3/2主接线中断路器等可能存在二次设备极性接人不一致的场合，\n装置应能通过不同输人虚端子对电流极性进行调整。\n5.2.5装置过程层GOOSE信号应直接连接，不应经过其他装置转发。当设备之间无网络连接，但又需要配合时，宜通过智能终端输出触点建立配合关系。\n5.2.6装置过程层SV虚端子信号仅可经合并单元一级级联处理。\n6物理接口规范\n6.1光纤接口配置\n6.1.1光纤类型宜采用多模光纤。\n[PAGE 6]\nGB/T 36273—2018\n6.1.2光纤芯径宜采用62.5um/125μm或50μm/125um。\n6.1.3光波长宜为1310nm或850nm。\n6.1.4光纤连接器类型宜采用LC或ST接口。\n6.1.5装置光纤端口配置数量应满足工程应用需求。\n6.2光纤接口技术要求\n6.2.11310nm光纤发送功率范围：-20dBm～-14dBm。光接收灵敏度范围：一31dBm～-14dBm。\n6.2.2850nm光纤发送功率范围：-19dBm～-10dBm。光接收灵敏度范围：一24dBm~-10dBm。\n6.2.3当接收端口中断时，数据发送功能不应受影响；当发送端口中断时，数据接收功能不应受影响。\n6.2.4装置宜具备过程层网口光强监视功能。\n7压板配置\n7.1软压板\n7.1.1装置发送端设置的GOOSE输出软压板退出时，应从逻辑上隔离相应信号输出。\n7.1.2装置应按合并单元设置SV接收软压板。合并单元对应的SV接收软压板投人时，若装置检修状态和该合并单元上送的数据中检修品质位不一致，装置应闭锁相关保护；合并单元对应的SV接收软压板退出时，该合并单元上送的数据不参与相关保护逻辑计算。\n7.2硬压板\n7.2.1除“远方操作”压板和“检修”压板采用硬压板外，其他压板应采用软压板。\n示等明显显示标志。\n7.2.3装置检修压板投人时，装置发送的GOOSE报文test应置位。\n较，只有两者一致时才将信号作为有效进行处理或动作。\n7.2.5SV接收端装置应将接收的SV报文中的test位与装置自身的检修压板状态进行比较，只有两者一致时才将该信号作用于保护逻辑，否则应按相关通道采样异常进行处理。\n8过程层二次回路建模\n8.1过程层数据集过程层设备宜配置在线监测信息数据集，即装置监测信息（dsAin）。\n8.2过程层交换机建模过程层交换机建模应符合DL/T1663一2016中附录C的规定。\n9对相关设备的要求\n9.1合并单元\n9.1.1合并单元技术条件应符合DL/T282的规定。\n[PAGE 7]\nGB/T36273-2018\n9.1.2合并单元输出至装置的采样值数据应采用DL/T860.92规定的数据格式通过以太网传输，传输介质采用光纤。\n9.1.3合并单元与装置的连接宜使用多模光纤，接口类型宜采用LC或ST。\n9.1.4单套合并单元输出两路A/D采样值应由同一路通道进入同一套装置。\n9.1.5合并单元应支持采样数据通道可配置。\n9.1.6合并单元用于保护的输出接口采样频率应为4000Hz。\n9.1.7合并单元应输出含电子式互感器整体的采样响应延时。合并单元延时宜位于数据集的第一个通道。\n9.1.8合并单元提供给装置使用的光纤端口数量应能满足工程应用需求。\n9.2智能终端\n9.2.1智能终端技术条件应符合GB/T34132一2017的规定。\n9.2.2智能终端与装置的数据采用DL/T860.81规定的GOOSE数据格式通过以太网传输，传输介质采用光纤。\n9.2.3智能终端与装置的连接宜使用多模光纤，接口类型宜采用LC或ST。\n9.2.4智能终端应具备接收装置分相跳合闸、闭重三跳、重合闸GOOSE命令，以及闭重三跳硬接点输人接口。\n9.2.5智能终端提供给装置使用的光纤端口数量应能满足工程应用需求。\n10工程配置文件\n10.1一般要求\n10.1.1工程配置文件应包括SSD、CID、ICD、SCD、回路实例配置文件等。工程配置文件与配置工具、\n装置间的配合关系和工程配置流程应符合GB/T32890一2016的规定。\n10.1.2SSD文件及CID文件格式应符合DL/T860的规定。\n10.2ICD文件\n10.2.1各类型装置ICD模型建模应符合GB/T32890一2016的规定，不满足功能对象建模要求时，应根据DL/T860的扩充原则自定义LN、DO、CDC和DA等类型，扩充类型定义命名应符合GB/T32890一\n2016的规定避免冲突。\n10.2.2符合DL/T860.6规定的SCLSchema语法规则，数据类型模板应符合DL/T860.73、DL/T860.74\n的定义。\n10.3SCD文件模型、压板与控制对象对应关系等。\n10.3.2适用于智能变电站的SCD文件应满足以下要求：\na）一次设备模型应包含变电站模型、电压等级模型、一次拓扑模型；\nb）一次和二次模型关联关系应明确LNode配置到Substation分支下各个标签的详细规则；\nc）应规范IED装置（含过程层交换机)的物理端口及通信端口描述方式，光缆、光口、板卡的命名应保证全站唯一；\nd）应用GB/T32890一2016中（PhysConn>标签明确描述逻辑通信链路与物理光缆、物理光口之间的关系。\n[PAGE 8]\nGB/T36273—2018\n10.4回路实例配置文件置文件为准\n10.4.2回路实例配置文件应仅从SCD文件中导出，采用UTF-8编码的XML文件格式。回路实例配置文件格式规范参见附录A。\n10.4.3除IED描述、FCDA描述、intAddr描述外，SCD文件中其余描述性属性desc、dU元素不提取到回路实例配置文件中。所有提取元素的子元素应与SCD文件中的顺序一致；所有提取元素的属性按字母顺序从a～z的顺序排列；没有子元素和赋值的元素应采用“/>\"结尾。\n10.4.4每个IED的回路实例配置文件采用CRC校验码用于版本管理，CRC校验码生成规则应符合\nGB/T328902016中附录G的规定。\n10.4.5装置上电后应计算回路实例配置文件CRC校验码，当计算值与文件中的CRC校验码不一致时，装置应闭锁并显示告警信息，该告警状态未消除前不能手动复归。\n10.4.6装置运行后宜通过MMS服务上送回路实例配置文件的CRC校验码和文件生成时间，对不具有MMS服务的装置可通过GOOSE方式上传。\n[PAGE 9]\nGB/T36273-2018\n附录A\n（资料性附录）回路实例配置文件格式要求\nA.1IED元素\nIED元素是回路实例配置文件的根节点，根节点下依次包含GOOSEPUB（GOOSE发布）元素、\nGOOSESUB(GOOSE订阅)元素、SVPUB(SV发布)元素、SVSUB(SV订阅)元素、CRC（校验码）元素。IED元素的格式定义示例见表A.1。\n表A.1IED元素格式定义示例表回路实例配置文件说明\n(? xml version=“1.0” encoding=“UTF-8”?)\nXML声明段，包含在CRC校验码计算中\n<IEDconfigVersion=“V1.01”desc=“某线线路保护A”\nIED元素的属性包括IED名称、描述、制造，=dV01d，u，anu\n厂、装置型号和版本号，在CRC校验码计算号\"）\n时应剔除desc、manufacturer、type、config\n(GOOSEPUB)Version属性；\n(GOOSESUB)\nb）GOOSEPUB元素格式定义见A.2；\n(SVPUB)c）\nGOOSESUB元素格式定义见A.3；\n(SVSUB)d）\nSVPUB元素格式定义见A.4；\n(CRC)\nSVSUB元素格式定义见A.5；\nf）CRC元素格式定义见A.6；\ng）\n若IED根节点下没有内容则不生成回路实例配置文件\nA.2GOOSEPUB(GOOSE发布)元素\nGOOSEPUB元素是从SCD文件中提取的装置过程层GOOSE输出配置信息，GOOSEPUB元素下包含按SCD文件顺序配置的GOOSE控制块。GOOSEPUB元素的格式定义示例见表A.2。\n表A.2GOOSEPUB元素格式定义示例表回路实例配置文件说明\n(GOOSEPUB)\nGOOSE发送参数，若装置过程层没有GOOSE\n发布配置则无此元素\n(GOCBref name=“PL2201APIGO/LLN0 $ GO $ gocb0\")\nGOCB1路径名\n(GSEControl....)\nIED的GSEControl元素参数（含Private元素）\n(Private)\n[PAGE 10]\nGB/T 36273-2018\n表A.2(续)\n回路实例配置文件说明\n(ConnectedAP....>\na）（GOCB1相关ConnectedAP元素参数（含Pri-\n(Private)\nvate、GSE、PhysConn元素）；\n(GSE)b）\n只提取与GOCB1相关的GSE元素，其余\n(PhysConn)GSE元素不再提取；\nc）ConnectedAP包含的PhysConn元素应全部提取，即GOCB1发送端口应是相关Con-\nnectedAP下全部端口\n(DataSet name=“dsGOOSEo\")\nGOCB1引用的DataSet元素参数（含Private\n(Private)元素）：a)\nFCDA元素的bType属性是GOOSE发送虚\n(DAI ...)端子的数据类型；\nb)\nFCDA元素的desc属性是GOOSE发送虚端\n(DAI .....)\n子的描述，在CRC校验码计算时应剔除desc\n属性；\n（FCDA bType=“BOOLEAN” desc=“\"\nc）\nFCDA元素下应包含所关联的DAI元素，\n(DAI ...)\nDAI元素中一般应包含sAddr属性，表征内部参量的引用名\nA.3GOOSESUB(GOOSE订阅）元素\nGOOSESUB元素是从SCD文件中提取的装置过程层GOOSE输人配置信息，GOOSESUB元素下包含按SCD文件顺序订阅的外部IED的GOOSE控制块。GOOSESUB元素的格式定义示例见表A.3。\n表A.3GOOSESUB元素格式定义示例表回路实例配置文件说明\n(GOOSESUB)\na）（GOOSE接收参数，若装置过程层没有GOOSE\n订阅配置则无此元素；\nb）外部GOCB按Inputs元素中引用外部数据的先后顺序排列，合并重复的外部GOCB元素\n（GOCBrefname=“IL2201ARPIT/LLN0$GO$gocbo\")\n外部GOCB1路径名(GSEControl...\n外部IED的GSEControl元素参数（不含Private\n元素）\n(ConnectedAP...)\na）外部GOCBl相关ConnectedAP元素参数（不\n(GSE)\n含Private、PhysConn元素）；\nb）只提取与外部GOCB1相关的GSE元素，其余GSE元素不再提取；\nConnectedAP包含的PhysConn 元素不提取，接收端口配置在ExtRef元素的intAddr\n属性中配置\n[PAGE 11]\nGB/T 36273-2018\n表A.3(续）\n回路实例配置文件说明\n(DataSet name=“dsGOOSEo\")\n外部GOCB1引用的DataSet元素参数（不含Pri-\nvate元素）：\n<…-，=uuV,spppv）\na）FCDA元素的bType属性是GOOSE发送虚\n(DAI .....>端子的数据类型；\nb)\nFCDA元素的desc属性是GOOSE发送虚端\n(intAddr desc=“远跳开人”name=“1-B:..\">\n子的描述；(DAI ....c)\n除bType属性外，FCDA元素的其他属性在\n<,=u重.，sppv)CRC校验码计算时应剔除；\n(DAI ....)d)\n订阅的FCDA元素下应包含所关联的\nintAddr元素，intAddr元素的name属性是，=N，=\nGOOSE接收虚端子，即ExtRef元素的in-\n灵”...\ntAddr属性，desc属性是GOOSE接收虚端\n(intAddr desc=“” name==“NULL\")\n子的描述，在CRC校验码计算时应剔除desc\n属性；\ne）intAddr元素下应包含所关联的DAI元素，\nDAI元素中一般应包含sAddr属性，表征内部参量的引用名；\nf\n订阅相同的FCDA元素连接到多个不同的内部地址（intAddr)，在FCDA元素下应依次包含多个intAddr元素；\ng）未订阅的FCDA元素下也应包含intAddr元素，其name属性为NULL，desc属性为空字符\n(GOCBref.....)外部GOCBn路径名\nA.4SVPUB(SV发布）元素\nSVPUB元素是从SCD文件中提取的装置过程层SV输出配置信息，SVPUB元素下包含按SCD\n文件顺序配置的SV控制块。SVPUB元素的格式定义示例见表A.4。\n表A.4SVPUB元素格式定义示例表回路实例配置文件说明\nSV发送参数，若装置过程层没有SV发布配置则\n(SVPUB>无此元素(SMVCBref\nSMVCB1路径名\nname==“MU2201AMU01/LLNo $ SV $ msvcb0\")\n(SampledValueControl....>\nIED的SampledValueControl元素参数（含\n(Private)\nPrivate元素、SmvOpts元素）\n(SmvOpts)\n[PAGE 12]\nGB/T 36273—2018\n表A.4(续)\n回路实例配置文件说明\n(ConnectedAP...)>\nSMVCB1相关ConnectedAP元素参数（含\n(Private)\nPrivate、SMV、PhysConn元素）；\n(SMV)b)\n只提取与SMVCB1相关的SMV元素，其余\n(PhysConn)SMV元素不再提取；\nc）\nConnectedAP包含的PhysConn元素全部提取，即SMVCB1发送端口应是相关Con-\nnectedAP下全部端口\n(DataSet name=“dsSVo\")\nSMVCB1引用的DataSet元素参数（含Private\n(Private)元素）：\n《FCDAbType=“INT32”desc=“保护电流A相AD1”\n若FCDA按DO.DA建模，提取规则与GOOSESUB）\n相同：(DAI ...)\na）FCDA元素的bType属性是SV发送虚端子\n<FCDAbType=“Quality”desc=“保护电流A相AD1”\n的数据类型；b)\nFCDA元素的desc属性是SV发送虚端子的描\n(DAI ....)\n述，在CRC校验码计算时应剔除desc属性；\nc）\nFCDA元素下应包含所关联的DAI元素，\n（FCDAdesc=“保护电流A相AD1”..fc=“MX”\nDAI元素中一般应包含sAddr属性，表征内部参量的引用名。\n(DOI ....)\n若FCDA按DO建模，提取规则应为：\n(SDI>\nFCDA元素中无bType属性；\n(DAI ...)\nFCDA元素的desc属性是SV发送虚端子的描\n(DAI....)\n述，在CRC校验码计算时应剔除desc属性；\nFCDA元素下应包含所关联的DOI元素，不提取dU元素\n(SMVCBref....>SMVCBn路径名\nA.5SVSUB(SV订阅）元素文件顺序订阅的外部IED的SV控制块。SVSUB元素的格式定义示例见表A.5。\n表A.5SVSUB元素格式定义示例表回路实例配置文件说明\n(SVSUB>\na）SV接收参数，若装置过程层没有SV订阅配置则无此元素；\nb）外部SMVCB按Inputs元素中引用外部数据的先后顺序排列，合并重复的外部SMVCB\n元素\n[PAGE 13]\nGB/T 36273-—2018\n表A.5（续）\n回路实例配置文件说明(SMVCBref\n外部SMVCB1路径名\nname=“MU2201AMU01/LLN0 $ SV $ msvcbo\")\n(SampledValueControl .....>\n外部IED的 SampledValueControl元素参数（不\n(SmvOpts)含Private元素）\n(ConnectedAP....)\na）\n外部SMVCB1相关ConnectedAP元素参数\n(SMV>\n（不含Private、PhysConn元素）；\nb）只提取与外部SMVCB1相关的SMV元素，\n其余SMV元素不再提取；\nConnectedAP包含的PhysConn元素不提取，接收端口配置在ExtRef元素的intAddr\n属性中配置\n(DataSet name=“dsSVo”)\n外部SMVCB1引用的DataSet元素参数（不含\n《FCDAbType=“INT32”desc=“保护电流A相\nPrivate元素）：AD1.....\n若FCDA按DO.DA建模，提取规则与GOOSE-\n<-I,=ueuBV,=sap ppyu)\nPUB相同：(DAI ....)\nFCDA元素的bType属性是SV发送虚端子\n《FCDAbType=“Quality”desc=“保护电流A相的数据类型；\nAD1 ......>b）\nFCDA元素的desc属性是SV发送虚端子的\n（intAddr desc=“A相电流”name-“1-A….”）\n描述；(DAI......>c）\n除bType属性外，FCDA元素的其他属性在\nCRC校验码计算时应剔除；\n（FCDAdesc=“保护电流A相AD1”..fc=“MX”\n订阅的FCDA元素下应包含所关联的\nintAddr元素，intAddr元素的name属性是\n<-,ueuV,osapppyu)\nSV接收虚端子，即ExtRef元素的intAddr\n(DOI .....>\n属性，desc属性是SV接收虚端子的描述，在\n(SDI>\nCRC校验码计算时应剔除desc属性；\n(DAI .....)\ne）intAddr元素下应包含所关联的DAI元素，\n(DAI .....)\nDAI元素中一般应包含sAddr属性，表征内\n《FCDAdesc=“测量电流A相”…….fc=“MX”\n部参量的引用名；f)\n订阅相同的FCDA元素连接到多个不同的\n(intAddr desc=“” name=“NULL”)\n内部地址（intAddr)，在FCDA元素下应依次包含多个intAddr元素；\ng）未订阅的FCDA元素下也应包含intAddr元素，其name属性为NULL,desc属性为空字符。\n若FCDA按DO建模，提取规则应为：\nFCDA元素中无bType属性；\nb）\nFCDA元素的desc属性是SV发送虚端子的描述；\nc)\nFCDA元素的全部属性在CRC校验码计算时应剔除；\n[PAGE 14]\nGB/T 36273—2018\n表A.5(续)\n回路实例配置文件说明d）\n订阅的FCDA元素下应包含所关联的intAddr\n元素，intAddr元素的name属性是SV接收虚端子，即ExtRef元素的intAddr属性，desc\n属性是SV接收虚端子的描述，在CRC校验码计算时应剔除desc属性；\nintAddr元素下应包含所关联的DOI元素，\n不提取dU元素；f)\n订阅相同的FCDA元素连接到多个不同的内部地址(intAddr)，在FCDA元素下应依次包含多个intAddr元素；\ng）\n未订阅的FCDA元素下也应包含intAddr元素，其name属性为NULL，desc属性为空字符\n(SMVCBref....)外部SMVCBn路径名\nA.6CRC（校验码）元素\nCRC元素的格式定义示例见表A.6。\n表A.6CRC元素格式定义示例表回路实例配置文件说明\n(CRC id=“0123ABCD\" timestamp=“1970-01-01 08:00:00\"/>\na）CRC校验码信息，若GOOSEPUB、GOOSE\nSUB、SVPUB、SVSUB元素都不存在，则无此元素，计算回路实例配置文件CRC校验码时不包含此元素；\nb）CRC元素的id属性是按规则计算的32位\nCRC校验码字符串，timestamp属性是生成校验码时刻的本地时间戳（UTC+8），时间格式为\"YYYY-MM-DDhh:mm:ss\"",
+  "pages": [
+    {
+      "page_num": 1,
+      "selected_source": "ocr_clean",
+      "text": "ICS 29.240K 45中华人民共和国国家标准\nGB/T36273—2018\n智能变电站继电保护和安全自动装置数字化接口技术规范\nDigital interface technical specification forrelaying protection and security\nautomaticequipmentinsmartsubstation\n2018-06-07发布\n2019-01-01实施国家市场监督管理总局发布中国国家标准化管理委员会",
+      "is_toc_page": false,
+      "is_filtered": false,
+      "filter_reason": ""
+    },
+    {
+      "page_num": 2,
+      "selected_source": "ocr_clean",
+      "text": "GB/T 36273—2018\n目次前言·\n1范围\n2规范性引用文件\n3术语和定义、缩略语·\n4总则……\n5虚端子接口规范\n6物理接口规范\n7压板配置.\n8过程层二次回路建模\n9对相关设备的要求\n10工程配置文件附录A（资料性附录）回路实例配置文件格式要求",
+      "is_toc_page": false,
+      "is_filtered": false,
+      "filter_reason": ""
+    },
+    {
+      "page_num": 3,
+      "selected_source": "ocr_clean",
+      "text": "GB/T36273-2018\n前言本标准按照GB/T1.1一2009给出的规则起草。\n请注意本文件的某些内容可能涉及专利。本文件的发布机构不承担识别这些专利的责任。\n本标准由中国电力企业联合会提出并归口。\n本标准起草单位：中国电力工程顾问集团东北电力设计院有限公司、南京南瑞继保电气有限公司、\n国网江苏省电力公司电力科学研究院、国家电网公司国家电力调度控制中心、中国南方电网有限责任公司、国网重庆市电力公司、国网冀北电力有限公司、广东电网有限责任公司电力调度控制中心、电力规划总院有限公司、国网湖南省电力公司电力科学研究院、国网河南省电力公司电力科学研究院、贵州电网有限责任公司电力科学研究院、北京四方继保自动化股份有限公司、许继集团有限公司、国电南京自动化股份有限公司。\n本标准主要起草人：张忠华、吕航、高磊、李铁民、李力、蒋航、史泽兵、宋亮亮、曾志安、高旭、邓旭阳、\n陈志蓉、朱维钧、韩伟、王宇、孙晓勇、燕俊、王增超、姚亮、苏黎明、邓茂军。",
+      "is_toc_page": false,
+      "is_filtered": false,
+      "filter_reason": ""
+    },
+    {
+      "page_num": 4,
+      "selected_source": "ocr_clean",
+      "text": "GB/T 36273-2018\n智能变电站继电保护和安全自动装置数字化接口技术规范\n1范围本标准规定了智能变电站继电保护和安全自动装置的虚端子接口规范、过程层物理接口规范、压板配置、过程层二次回路建模、对相关设备的要求、工程配置文件。\n本标准适用于智能变电站中110kV(66kV)及以上电压等级的各种继电保护和安全自动装置（以下简称“装置\"），110kV（66kV)以下电压等级的装置参照执行。\n2规范性引用文件下列文件对于本文件的应用是必不可少的。凡是注日期的引用文件，仅注日期的版本适用于本文件。凡是不注日期的引用文件，其最新版本（包括所有的修改单)适用于本文件。\nGB/T14285--2006继电保护和安全自动装置技术规程\nGB/T30155—2013智能变电站技术导则\nGB/T32890—2016继电保护IEC61850工程应用模型\nGB/T34132一2017智能变电站智能终端装置通用技术条件\nGB/T51071-2014330kV～750kV智能变电站设计规范\nDL/T282合并单元技术条件\nDL/T860（所有部分）变电站通信网络和系统\n3术语和定义、缩略语\n3.1术语和定义\nGB/T14285—2006、GB/T 30155—2013、GB/T 51071—2014、GB/T 51072-2014、DL/T 860、\nDL/T282界定的术语和定义适用于本文件。\n3.2缩略语下列缩略语适用于本文件。\nCID:IED实例配置（ConfiguredIEDDescription)\nCRC：循环冗余码校验（CyclicRedundancyCheck）\nGOOSE：面向通用对象的变电站事件（GenericObjectOrientedSubstationEvents)\nICD：IED能力描述（IEDCapabilityDescription)\nIED：智能电子设备（IntelligentElectronicDevice）\nSCD：全站系统配置（SubstationConfigurationDescription）\nSSD：系统规范描述（SystemSpecificationDescription）",
+      "is_toc_page": false,
+      "is_filtered": false,
+      "filter_reason": ""
+    },
+    {
+      "page_num": 5,
+      "selected_source": "ocr_clean",
+      "text": "GB/T36273-2018\nSV：采样值(SampledValue)\n4总则\n4.1本标准旨在通过规范智能变电站继电保护和安全自动装置数字化接口，为继电保护和安全自动装置的设计、制造、运行、管理和维护工作提供有利条件，提升继电保护运行和管理水平。\n4.2装置应符合GB/T14285一2006的规定，满足“可靠性、选择性、灵敏性、速动性”的要求。\n4.3与双重化配置装置接口的合并单元、智能终端、过程层交换机等应遵循完全独立的原则。\n出、联闭锁信号等信息交互可通过GOOSE报文传输或直接电缆连接。装置与过程层设备的电压电流量等采样量可通过SV报文传输或直接电缆连接。\n4.5装置接入不同网络时，应采用相互独立的数据接口控制器。\n4.6在满足现场运行需求的前提下，宜简化二次设备之间的GOOSE软压板。\n4.7装置应具备通信中断、异常等状态的检测和告警功能。\n5虚端子接口规范\n5.1虚端子建模\n5.1.1GOOSE虚端子信息包括开关量输人、跳闸出口、信号开出、告警、联闭锁等信息，并应配置到\nDA层次。SV虚端子信息包括电流通道、电压通道及固有延时，并应配置到DO层次。\n5.1.2装置GOOSE及SV虚端子物理含义应采用中文描述，ICD文件中数据对象实例DOI应包含中文的“desc\"描述和“dU”属性赋值，两者应一致并能完整表达该数据对象具体意义。\n5.1.3装置所需的智能终端位置类GOOSE信号（断路器、刀闸）应采用双点信息传送，普通遥信和告警信号应采用单点信息传送，工作电压、内部工作温度等遥测信号宜采用浮点型数据类型传送。\n5.1.4SV输人虚端子模型应符合GB/T32890一2016中10.1的规定。\n5.1.5GOOSE输人虚端子模型应符合GB/T32890—2016中9.1的规定。\n5.2虚端子配置\n5.2.1智能终端应上送原始开人GOOSE信号，IED设备应根据各自需求完成所需信号合成。\n5.2.2输出信号受不同软压板控制时应形成相应的GOOSE输出虚端子，应在满足现场运行需求的前提下简化输出虚端子配置。\n5.2.3对于同一逻辑功能输人有连接多个外部端子的需求，输人虚端子的中文描述应用数字后缀区分。\n5.2.4对于桥断路器、母联断路器、3/2主接线中断路器等可能存在二次设备极性接人不一致的场合，\n装置应能通过不同输人虚端子对电流极性进行调整。\n5.2.5装置过程层GOOSE信号应直接连接，不应经过其他装置转发。当设备之间无网络连接，但又需要配合时，宜通过智能终端输出触点建立配合关系。\n5.2.6装置过程层SV虚端子信号仅可经合并单元一级级联处理。\n6物理接口规范\n6.1光纤接口配置\n6.1.1光纤类型宜采用多模光纤。",
+      "is_toc_page": false,
+      "is_filtered": false,
+      "filter_reason": ""
+    },
+    {
+      "page_num": 6,
+      "selected_source": "ocr_clean",
+      "text": "GB/T 36273—2018\n6.1.2光纤芯径宜采用62.5um/125μm或50μm/125um。\n6.1.3光波长宜为1310nm或850nm。\n6.1.4光纤连接器类型宜采用LC或ST接口。\n6.1.5装置光纤端口配置数量应满足工程应用需求。\n6.2光纤接口技术要求\n6.2.11310nm光纤发送功率范围：-20dBm～-14dBm。光接收灵敏度范围：一31dBm～-14dBm。\n6.2.2850nm光纤发送功率范围：-19dBm～-10dBm。光接收灵敏度范围：一24dBm~-10dBm。\n6.2.3当接收端口中断时，数据发送功能不应受影响；当发送端口中断时，数据接收功能不应受影响。\n6.2.4装置宜具备过程层网口光强监视功能。\n7压板配置\n7.1软压板\n7.1.1装置发送端设置的GOOSE输出软压板退出时，应从逻辑上隔离相应信号输出。\n7.1.2装置应按合并单元设置SV接收软压板。合并单元对应的SV接收软压板投人时，若装置检修状态和该合并单元上送的数据中检修品质位不一致，装置应闭锁相关保护；合并单元对应的SV接收软压板退出时，该合并单元上送的数据不参与相关保护逻辑计算。\n7.2硬压板\n7.2.1除“远方操作”压板和“检修”压板采用硬压板外，其他压板应采用软压板。\n示等明显显示标志。\n7.2.3装置检修压板投人时，装置发送的GOOSE报文test应置位。\n较，只有两者一致时才将信号作为有效进行处理或动作。\n7.2.5SV接收端装置应将接收的SV报文中的test位与装置自身的检修压板状态进行比较，只有两者一致时才将该信号作用于保护逻辑，否则应按相关通道采样异常进行处理。\n8过程层二次回路建模\n8.1过程层数据集过程层设备宜配置在线监测信息数据集，即装置监测信息（dsAin）。\n8.2过程层交换机建模过程层交换机建模应符合DL/T1663一2016中附录C的规定。\n9对相关设备的要求\n9.1合并单元\n9.1.1合并单元技术条件应符合DL/T282的规定。",
+      "is_toc_page": false,
+      "is_filtered": false,
+      "filter_reason": ""
+    },
+    {
+      "page_num": 7,
+      "selected_source": "ocr_clean",
+      "text": "GB/T36273-2018\n9.1.2合并单元输出至装置的采样值数据应采用DL/T860.92规定的数据格式通过以太网传输，传输介质采用光纤。\n9.1.3合并单元与装置的连接宜使用多模光纤，接口类型宜采用LC或ST。\n9.1.4单套合并单元输出两路A/D采样值应由同一路通道进入同一套装置。\n9.1.5合并单元应支持采样数据通道可配置。\n9.1.6合并单元用于保护的输出接口采样频率应为4000Hz。\n9.1.7合并单元应输出含电子式互感器整体的采样响应延时。合并单元延时宜位于数据集的第一个通道。\n9.1.8合并单元提供给装置使用的光纤端口数量应能满足工程应用需求。\n9.2智能终端\n9.2.1智能终端技术条件应符合GB/T34132一2017的规定。\n9.2.2智能终端与装置的数据采用DL/T860.81规定的GOOSE数据格式通过以太网传输，传输介质采用光纤。\n9.2.3智能终端与装置的连接宜使用多模光纤，接口类型宜采用LC或ST。\n9.2.4智能终端应具备接收装置分相跳合闸、闭重三跳、重合闸GOOSE命令，以及闭重三跳硬接点输人接口。\n9.2.5智能终端提供给装置使用的光纤端口数量应能满足工程应用需求。\n10工程配置文件\n10.1一般要求\n10.1.1工程配置文件应包括SSD、CID、ICD、SCD、回路实例配置文件等。工程配置文件与配置工具、\n装置间的配合关系和工程配置流程应符合GB/T32890一2016的规定。\n10.1.2SSD文件及CID文件格式应符合DL/T860的规定。\n10.2ICD文件\n10.2.1各类型装置ICD模型建模应符合GB/T32890一2016的规定，不满足功能对象建模要求时，应根据DL/T860的扩充原则自定义LN、DO、CDC和DA等类型，扩充类型定义命名应符合GB/T32890一\n2016的规定避免冲突。\n10.2.2符合DL/T860.6规定的SCLSchema语法规则，数据类型模板应符合DL/T860.73、DL/T860.74\n的定义。\n10.3SCD文件模型、压板与控制对象对应关系等。\n10.3.2适用于智能变电站的SCD文件应满足以下要求：\na）一次设备模型应包含变电站模型、电压等级模型、一次拓扑模型；\nb）一次和二次模型关联关系应明确LNode配置到Substation分支下各个标签的详细规则；\nc）应规范IED装置（含过程层交换机)的物理端口及通信端口描述方式，光缆、光口、板卡的命名应保证全站唯一；\nd）应用GB/T32890一2016中（PhysConn>标签明确描述逻辑通信链路与物理光缆、物理光口之间的关系。",
+      "is_toc_page": false,
+      "is_filtered": false,
+      "filter_reason": ""
+    },
+    {
+      "page_num": 8,
+      "selected_source": "ocr_clean",
+      "text": "GB/T36273—2018\n10.4回路实例配置文件置文件为准\n10.4.2回路实例配置文件应仅从SCD文件中导出，采用UTF-8编码的XML文件格式。回路实例配置文件格式规范参见附录A。\n10.4.3除IED描述、FCDA描述、intAddr描述外，SCD文件中其余描述性属性desc、dU元素不提取到回路实例配置文件中。所有提取元素的子元素应与SCD文件中的顺序一致；所有提取元素的属性按字母顺序从a～z的顺序排列；没有子元素和赋值的元素应采用“/>\"结尾。\n10.4.4每个IED的回路实例配置文件采用CRC校验码用于版本管理，CRC校验码生成规则应符合\nGB/T328902016中附录G的规定。\n10.4.5装置上电后应计算回路实例配置文件CRC校验码，当计算值与文件中的CRC校验码不一致时，装置应闭锁并显示告警信息，该告警状态未消除前不能手动复归。\n10.4.6装置运行后宜通过MMS服务上送回路实例配置文件的CRC校验码和文件生成时间，对不具有MMS服务的装置可通过GOOSE方式上传。",
+      "is_toc_page": false,
+      "is_filtered": false,
+      "filter_reason": ""
+    },
+    {
+      "page_num": 9,
+      "selected_source": "ocr_clean",
+      "text": "GB/T36273-2018\n附录A\n（资料性附录）回路实例配置文件格式要求\nA.1IED元素\nIED元素是回路实例配置文件的根节点，根节点下依次包含GOOSEPUB（GOOSE发布）元素、\nGOOSESUB(GOOSE订阅)元素、SVPUB(SV发布)元素、SVSUB(SV订阅)元素、CRC（校验码）元素。IED元素的格式定义示例见表A.1。\n表A.1IED元素格式定义示例表回路实例配置文件说明\n(? xml version=“1.0” encoding=“UTF-8”?)\nXML声明段，包含在CRC校验码计算中\n<IEDconfigVersion=“V1.01”desc=“某线线路保护A”\nIED元素的属性包括IED名称、描述、制造，=dV01d，u，anu\n厂、装置型号和版本号，在CRC校验码计算号\"）\n时应剔除desc、manufacturer、type、config\n(GOOSEPUB)Version属性；\n(GOOSESUB)\nb）GOOSEPUB元素格式定义见A.2；\n(SVPUB)c）\nGOOSESUB元素格式定义见A.3；\n(SVSUB)d）\nSVPUB元素格式定义见A.4；\n(CRC)\nSVSUB元素格式定义见A.5；\nf）CRC元素格式定义见A.6；\ng）\n若IED根节点下没有内容则不生成回路实例配置文件\nA.2GOOSEPUB(GOOSE发布)元素\nGOOSEPUB元素是从SCD文件中提取的装置过程层GOOSE输出配置信息，GOOSEPUB元素下包含按SCD文件顺序配置的GOOSE控制块。GOOSEPUB元素的格式定义示例见表A.2。\n表A.2GOOSEPUB元素格式定义示例表回路实例配置文件说明\n(GOOSEPUB)\nGOOSE发送参数，若装置过程层没有GOOSE\n发布配置则无此元素\n(GOCBref name=“PL2201APIGO/LLN0 $ GO $ gocb0\")\nGOCB1路径名\n(GSEControl....)\nIED的GSEControl元素参数（含Private元素）\n(Private)",
+      "is_toc_page": false,
+      "is_filtered": false,
+      "filter_reason": ""
+    },
+    {
+      "page_num": 10,
+      "selected_source": "ocr_clean",
+      "text": "GB/T 36273-2018\n表A.2(续)\n回路实例配置文件说明\n(ConnectedAP....>\na）（GOCB1相关ConnectedAP元素参数（含Pri-\n(Private)\nvate、GSE、PhysConn元素）；\n(GSE)b）\n只提取与GOCB1相关的GSE元素，其余\n(PhysConn)GSE元素不再提取；\nc）ConnectedAP包含的PhysConn元素应全部提取，即GOCB1发送端口应是相关Con-\nnectedAP下全部端口\n(DataSet name=“dsGOOSEo\")\nGOCB1引用的DataSet元素参数（含Private\n(Private)元素）：a)\nFCDA元素的bType属性是GOOSE发送虚\n(DAI ...)端子的数据类型；\nb)\nFCDA元素的desc属性是GOOSE发送虚端\n(DAI .....)\n子的描述，在CRC校验码计算时应剔除desc\n属性；\n（FCDA bType=“BOOLEAN” desc=“\"\nc）\nFCDA元素下应包含所关联的DAI元素，\n(DAI ...)\nDAI元素中一般应包含sAddr属性，表征内部参量的引用名\nA.3GOOSESUB(GOOSE订阅）元素\nGOOSESUB元素是从SCD文件中提取的装置过程层GOOSE输人配置信息，GOOSESUB元素下包含按SCD文件顺序订阅的外部IED的GOOSE控制块。GOOSESUB元素的格式定义示例见表A.3。\n表A.3GOOSESUB元素格式定义示例表回路实例配置文件说明\n(GOOSESUB)\na）（GOOSE接收参数，若装置过程层没有GOOSE\n订阅配置则无此元素；\nb）外部GOCB按Inputs元素中引用外部数据的先后顺序排列，合并重复的外部GOCB元素\n（GOCBrefname=“IL2201ARPIT/LLN0$GO$gocbo\")\n外部GOCB1路径名(GSEControl...\n外部IED的GSEControl元素参数（不含Private\n元素）\n(ConnectedAP...)\na）外部GOCBl相关ConnectedAP元素参数（不\n(GSE)\n含Private、PhysConn元素）；\nb）只提取与外部GOCB1相关的GSE元素，其余GSE元素不再提取；\nConnectedAP包含的PhysConn 元素不提取，接收端口配置在ExtRef元素的intAddr\n属性中配置",
+      "is_toc_page": false,
+      "is_filtered": false,
+      "filter_reason": ""
+    },
+    {
+      "page_num": 11,
+      "selected_source": "ocr_clean",
+      "text": "GB/T 36273-2018\n表A.3(续）\n回路实例配置文件说明\n(DataSet name=“dsGOOSEo\")\n外部GOCB1引用的DataSet元素参数（不含Pri-\nvate元素）：\n<…-，=uuV,spppv）\na）FCDA元素的bType属性是GOOSE发送虚\n(DAI .....>端子的数据类型；\nb)\nFCDA元素的desc属性是GOOSE发送虚端\n(intAddr desc=“远跳开人”name=“1-B:..\">\n子的描述；(DAI ....c)\n除bType属性外，FCDA元素的其他属性在\n<,=u重.，sppv)CRC校验码计算时应剔除；\n(DAI ....)d)\n订阅的FCDA元素下应包含所关联的\nintAddr元素，intAddr元素的name属性是，=N，=\nGOOSE接收虚端子，即ExtRef元素的in-\n灵”...\ntAddr属性，desc属性是GOOSE接收虚端\n(intAddr desc=“” name==“NULL\")\n子的描述，在CRC校验码计算时应剔除desc\n属性；\ne）intAddr元素下应包含所关联的DAI元素，\nDAI元素中一般应包含sAddr属性，表征内部参量的引用名；\nf\n订阅相同的FCDA元素连接到多个不同的内部地址（intAddr)，在FCDA元素下应依次包含多个intAddr元素；\ng）未订阅的FCDA元素下也应包含intAddr元素，其name属性为NULL，desc属性为空字符\n(GOCBref.....)外部GOCBn路径名\nA.4SVPUB(SV发布）元素\nSVPUB元素是从SCD文件中提取的装置过程层SV输出配置信息，SVPUB元素下包含按SCD\n文件顺序配置的SV控制块。SVPUB元素的格式定义示例见表A.4。\n表A.4SVPUB元素格式定义示例表回路实例配置文件说明\nSV发送参数，若装置过程层没有SV发布配置则\n(SVPUB>无此元素(SMVCBref\nSMVCB1路径名\nname==“MU2201AMU01/LLNo $ SV $ msvcb0\")\n(SampledValueControl....>\nIED的SampledValueControl元素参数（含\n(Private)\nPrivate元素、SmvOpts元素）\n(SmvOpts)",
+      "is_toc_page": false,
+      "is_filtered": false,
+      "filter_reason": ""
+    },
+    {
+      "page_num": 12,
+      "selected_source": "ocr_clean",
+      "text": "GB/T 36273—2018\n表A.4(续)\n回路实例配置文件说明\n(ConnectedAP...)>\nSMVCB1相关ConnectedAP元素参数（含\n(Private)\nPrivate、SMV、PhysConn元素）；\n(SMV)b)\n只提取与SMVCB1相关的SMV元素，其余\n(PhysConn)SMV元素不再提取；\nc）\nConnectedAP包含的PhysConn元素全部提取，即SMVCB1发送端口应是相关Con-\nnectedAP下全部端口\n(DataSet name=“dsSVo\")\nSMVCB1引用的DataSet元素参数（含Private\n(Private)元素）：\n《FCDAbType=“INT32”desc=“保护电流A相AD1”\n若FCDA按DO.DA建模，提取规则与GOOSESUB）\n相同：(DAI ...)\na）FCDA元素的bType属性是SV发送虚端子\n<FCDAbType=“Quality”desc=“保护电流A相AD1”\n的数据类型；b)\nFCDA元素的desc属性是SV发送虚端子的描\n(DAI ....)\n述，在CRC校验码计算时应剔除desc属性；\nc）\nFCDA元素下应包含所关联的DAI元素，\n（FCDAdesc=“保护电流A相AD1”..fc=“MX”\nDAI元素中一般应包含sAddr属性，表征内部参量的引用名。\n(DOI ....)\n若FCDA按DO建模，提取规则应为：\n(SDI>\nFCDA元素中无bType属性；\n(DAI ...)\nFCDA元素的desc属性是SV发送虚端子的描\n(DAI....)\n述，在CRC校验码计算时应剔除desc属性；\nFCDA元素下应包含所关联的DOI元素，不提取dU元素\n(SMVCBref....>SMVCBn路径名\nA.5SVSUB(SV订阅）元素文件顺序订阅的外部IED的SV控制块。SVSUB元素的格式定义示例见表A.5。\n表A.5SVSUB元素格式定义示例表回路实例配置文件说明\n(SVSUB>\na）SV接收参数，若装置过程层没有SV订阅配置则无此元素；\nb）外部SMVCB按Inputs元素中引用外部数据的先后顺序排列，合并重复的外部SMVCB\n元素",
+      "is_toc_page": false,
+      "is_filtered": false,
+      "filter_reason": ""
+    },
+    {
+      "page_num": 13,
+      "selected_source": "ocr_clean",
+      "text": "GB/T 36273-—2018\n表A.5（续）\n回路实例配置文件说明(SMVCBref\n外部SMVCB1路径名\nname=“MU2201AMU01/LLN0 $ SV $ msvcbo\")\n(SampledValueControl .....>\n外部IED的 SampledValueControl元素参数（不\n(SmvOpts)含Private元素）\n(ConnectedAP....)\na）\n外部SMVCB1相关ConnectedAP元素参数\n(SMV>\n（不含Private、PhysConn元素）；\nb）只提取与外部SMVCB1相关的SMV元素，\n其余SMV元素不再提取；\nConnectedAP包含的PhysConn元素不提取，接收端口配置在ExtRef元素的intAddr\n属性中配置\n(DataSet name=“dsSVo”)\n外部SMVCB1引用的DataSet元素参数（不含\n《FCDAbType=“INT32”desc=“保护电流A相\nPrivate元素）：AD1.....\n若FCDA按DO.DA建模，提取规则与GOOSE-\n<-I,=ueuBV,=sap ppyu)\nPUB相同：(DAI ....)\nFCDA元素的bType属性是SV发送虚端子\n《FCDAbType=“Quality”desc=“保护电流A相的数据类型；\nAD1 ......>b）\nFCDA元素的desc属性是SV发送虚端子的\n（intAddr desc=“A相电流”name-“1-A….”）\n描述；(DAI......>c）\n除bType属性外，FCDA元素的其他属性在\nCRC校验码计算时应剔除；\n（FCDAdesc=“保护电流A相AD1”..fc=“MX”\n订阅的FCDA元素下应包含所关联的\nintAddr元素，intAddr元素的name属性是\n<-,ueuV,osapppyu)\nSV接收虚端子，即ExtRef元素的intAddr\n(DOI .....>\n属性，desc属性是SV接收虚端子的描述，在\n(SDI>\nCRC校验码计算时应剔除desc属性；\n(DAI .....)\ne）intAddr元素下应包含所关联的DAI元素，\n(DAI .....)\nDAI元素中一般应包含sAddr属性，表征内\n《FCDAdesc=“测量电流A相”…….fc=“MX”\n部参量的引用名；f)\n订阅相同的FCDA元素连接到多个不同的\n(intAddr desc=“” name=“NULL”)\n内部地址（intAddr)，在FCDA元素下应依次包含多个intAddr元素；\ng）未订阅的FCDA元素下也应包含intAddr元素，其name属性为NULL,desc属性为空字符。\n若FCDA按DO建模，提取规则应为：\nFCDA元素中无bType属性；\nb）\nFCDA元素的desc属性是SV发送虚端子的描述；\nc)\nFCDA元素的全部属性在CRC校验码计算时应剔除；",
+      "is_toc_page": false,
+      "is_filtered": false,
+      "filter_reason": ""
+    },
+    {
+      "page_num": 14,
+      "selected_source": "ocr_clean",
+      "text": "GB/T 36273—2018\n表A.5(续)\n回路实例配置文件说明d）\n订阅的FCDA元素下应包含所关联的intAddr\n元素，intAddr元素的name属性是SV接收虚端子，即ExtRef元素的intAddr属性，desc\n属性是SV接收虚端子的描述，在CRC校验码计算时应剔除desc属性；\nintAddr元素下应包含所关联的DOI元素，\n不提取dU元素；f)\n订阅相同的FCDA元素连接到多个不同的内部地址(intAddr)，在FCDA元素下应依次包含多个intAddr元素；\ng）\n未订阅的FCDA元素下也应包含intAddr元素，其name属性为NULL，desc属性为空字符\n(SMVCBref....)外部SMVCBn路径名\nA.6CRC（校验码）元素\nCRC元素的格式定义示例见表A.6。\n表A.6CRC元素格式定义示例表回路实例配置文件说明\n(CRC id=“0123ABCD\" timestamp=“1970-01-01 08:00:00\"/>\na）CRC校验码信息，若GOOSEPUB、GOOSE\nSUB、SVPUB、SVSUB元素都不存在，则无此元素，计算回路实例配置文件CRC校验码时不包含此元素；\nb）CRC元素的id属性是按规则计算的32位\nCRC校验码字符串，timestamp属性是生成校验码时刻的本地时间戳（UTC+8），时间格式为\"YYYY-MM-DDhh:mm:ss\"",
+      "is_toc_page": false,
+      "is_filtered": false,
+      "filter_reason": ""
+    }
+  ]
+}

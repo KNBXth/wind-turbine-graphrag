@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>局部知识图谱可视化</title>
+    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <style>
+        body {
+            font-family: "Microsoft YaHei", sans-serif;
+            background: #f5f7fb;
+            margin: 0;
+            padding: 0;
+            color: #1f2937;
+        }
+
+        .container {
+            width: 1200px;
+            margin: 28px auto;
+        }
+
+        .hero {
+            background: #1f4f82;
+            color: white;
+            border-radius: 18px;
+            padding: 28px 36px;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 {
+            margin: 0 0 10px 0;
+            font-size: 26px;
+        }
+
+        .hero p {
+            margin: 0;
+            font-size: 15px;
+            opacity: 0.95;
+        }
+
+        .nav {
+            margin-bottom: 18px;
+        }
+
+        .nav a {
+            display: inline-block;
+            text-decoration: none;
+            color: #1f4f82;
+            background: white;
+            border: 1px solid #d9e2ef;
+            border-radius: 10px;
+            padding: 10px 16px;
+            margin-right: 10px;
+            font-weight: 600;
+        }
+
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 22px 24px;
+            margin-bottom: 18px;
+            box-shadow: 0 2px 10px rgba(31, 79, 130, 0.08);
+        }
+
+        .card h2 {
+            margin-top: 0;
+            font-size: 20px;
+        }
+
+        .input-row {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        input[type="text"] {
+            flex: 1;
+            padding: 12px 14px;
+            border-radius: 10px;
+            border: 1px solid #cfd9e6;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 12px 22px;
+            border: none;
+            background: #1f4f82;
+            color: white;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .hint {
+            color: #6b7280;
+            line-height: 1.8;
+        }
+
+        .message {
+            margin-top: 10px;
+            color: #b91c1c;
+            font-weight: 600;
+        }
+
+        .legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 12px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: #f8fbff;
+            border: 1px solid #e2e8f0;
+            padding: 6px 10px;
+            border-radius: 999px;
+            font-size: 13px;
+        }
+
+        .legend-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .graph-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 18px;
+        }
+
+        #graph-container {
+            height: 680px;
+            border: 1px solid #d9e2ef;
+            border-radius: 14px;
+            background: #fbfdff;
+        }
+
+        .side-panel {
+            height: 680px;
+            overflow-y: auto;
+            border: 1px solid #d9e2ef;
+            border-radius: 14px;
+            background: #fbfdff;
+            padding: 16px;
+        }
+
+        .panel-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #1f4f82;
+        }
+
+        .info-box {
+            background: white;
+            border: 1px solid #e5edf5;
+            border-radius: 12px;
+            padding: 12px 14px;
+            margin-bottom: 12px;
+            line-height: 1.8;
+        }
+
+        .info-label {
+            font-weight: 700;
+            color: #334155;
+        }
+
+        .source-item {
+            background: #f8fbff;
+            border-left: 4px solid #8fb6dc;
+            padding: 10px 12px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            line-height: 1.7;
+            font-size: 14px;
+        }
+
+        .small {
+            color: #64748b;
+            font-size: 13px;
+        }
+
+        .empty-tip {
+            color: #64748b;
+            line-height: 1.8;
+        }
+        .filter-btn {
+    border: 1px solid #d9e2ef;
+    background: #ffffff;
+    color: #1f4f82;
+    border-radius: 999px;
+    padding: 6px 12px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.filter-btn.active {
+    background: #1f4f82;
+    color: #ffffff;
+    border-color: #1f4f82;
+}
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="hero">
+        <h1>局部知识图谱可视化</h1>
+        <p>支持实体局部子图查看、中文关系展示、拖拽浏览与证据来源展开</p>
+    </div>
+
+    <div class="nav">
+        <a href="/">首页</a>
+        <a href="/entity">实体查询</a>
+        <a href="/qa">图谱问答</a>
+        <a href="/graph_rag">GraphRAG问答</a>
+        <a href="/graph_view">关系图展示</a>
+        <a href="/global_graph_full" class="nav-btn">全量图谱</a>
+    </div>
+
+    <div class="card">
+        <h2>输入实体名称</h2>
+        <form method="post">
+            <div class="input-row">
+                <input type="text" name="entity_name" placeholder="例如：变压器 / 电压互感器 / 风力发电机组 / 过热" value="{{ entity_name }}">
+                <button type="submit">查看关系图</button>
+            </div>
+        </form>
+        <div class="hint">
+            建议实体：变压器、电压互感器、风力发电机组、过热、齿轮箱、绝缘子、发电机
+        </div>
+        {% if message %}
+        <div class="message">{{ message }}</div>
+        {% endif %}
+        <div style="margin-bottom: 14px;">
+            <strong style="margin-right: 12px; color:#1f4f82;">关系筛选：</strong>
+            <button type="button" class="filter-btn active" data-filter="全部">全部</button>
+            <button type="button" class="filter-btn" data-filter="故障">故障</button>
+            <button type="button" class="filter-btn" data-filter="症状">症状</button>
+            <button type="button" class="filter-btn" data-filter="原因">原因</button>
+            <button type="button" class="filter-btn" data-filter="措施">措施</button>
+            <button type="button" class="filter-btn" data-filter="检测">检测</button>
+            <button type="button" class="filter-btn" data-filter="方法">方法</button>
+            <button type="button" class="filter-btn" data-filter="参数">参数</button>
+            <button type="button" class="filter-btn" data-filter="条件">条件</button>
+        </div>
+        <div class="legend">
+            <div class="legend-item"><span class="legend-dot" style="background:#1F4F82;"></span>中心实体</div>
+            <div class="legend-item"><span class="legend-dot" style="background:#4F81BD;"></span>设备</div>
+            <div class="legend-item"><span class="legend-dot" style="background:#5BC0DE;"></span>部件</div>
+            <div class="legend-item"><span class="legend-dot" style="background:#D9534F;"></span>故障</div>
+            <div class="legend-item"><span class="legend-dot" style="background:#F0AD4E;"></span>症状</div>
+            <div class="legend-item"><span class="legend-dot" style="background:#8E63CE;"></span>原因</div>
+            <div class="legend-item"><span class="legend-dot" style="background:#5CB85C;"></span>措施</div>
+            <div class="legend-item"><span class="legend-dot" style="background:#F7C948;"></span>方法</div>
+            <div class="legend-item"><span class="legend-dot" style="background:#7E8AA2;"></span>参数</div>
+            <div class="legend-item"><span class="legend-dot" style="background:#6F42C1;"></span>条件</div>
+            <div class="legend-item"><span class="legend-dot" style="background:#999999;"></span>标准</div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>局部关系图</h2>
+        <div class="graph-layout">
+            <div id="graph-container"></div>
+
+            <div class="side-panel">
+                <div class="panel-title">详情面板</div>
+                <div id="detail-panel" class="empty-tip">
+                    点击左侧节点或关系边，可查看详细信息与证据来源。
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script id="graph-data-json" type="application/json">
+    {{ graph_data | tojson | safe }}
+    </script>
+    
+    <script>
+        const graphData = JSON.parse(
+            document.getElementById("graph-data-json").textContent
+        );
+    
+        const container = document.getElementById('graph-container');
+        const detailPanel = document.getElementById('detail-panel');
+    
+        const nodes = new vis.DataSet(graphData.nodes || []);
+        const rawEdges = graphData.edges || [];
+
+function buildEdgeColor(category) {
+    const colorMap = {
+        "故障": "#D9534F",
+        "症状": "#F0AD4E",
+        "原因": "#8E63CE",
+        "措施": "#5CB85C",
+        "检测": "#F7C948",
+        "方法": "#F7C948",
+        "参数": "#7E8AA2",
+        "条件": "#6F42C1",
+        "其他": "#6b7a90"
+    };
+    return colorMap[category] || "#6b7a90";
+}
+
+function convertEdgesForVis(edgeList) {
+    return edgeList.map(edge => ({
+        id: edge.id,
+        from: edge.from,
+        to: edge.to,
+        label: edge.label,   // 短标签
+        arrows: edge.arrows || 'to',
+        width: edge.width || 2,
+        font: {
+            align: 'middle',
+            size: 15,
+            face: 'Microsoft YaHei',
+            color: '#334155',
+            strokeWidth: 0
+        },
+        smooth: {
+            type: 'dynamic'
+        },
+        color: {
+            color: buildEdgeColor(edge.relation_category),
+            highlight: '#1f4f82'
+        },
+        data: edge
+    }));
+}
+
+const edges = new vis.DataSet(convertEdgesForVis(rawEdges));
+    
+        const data = { nodes, edges };
+    
+        const options = {
+    autoResize: true,
+    physics: {
+        enabled: true,
+        stabilization: {
+            iterations: 300
+        },
+        barnesHut: {
+            gravitationalConstant: -3800,
+            centralGravity: 0.18,
+            springLength: 170,
+            springConstant: 0.04,
+            damping: 0.2
+        }
+    },
+    interaction: {
+        hover: true,
+        dragNodes: true,
+        dragView: true,
+        zoomView: true,
+        multiselect: false
+    },
+    nodes: {
+        shape: 'dot',
+        size: 28,
+        borderWidth: 2,
+        font: {
+            size: 18,
+            face: 'Microsoft YaHei',
+            color: '#1f2937',
+            strokeWidth: 0
+        }
+    },
+    edges: {
+        arrows: {
+            to: { enabled: true, scaleFactor: 0.8 }
+        },
+        font: {
+            size: 15,
+            align: 'middle',
+            face: 'Microsoft YaHei',
+            color: '#334155',
+            strokeWidth: 0
+        },
+        selectionWidth: 3
+    },
+    layout: {
+        improvedLayout: true
+    }
+};
+    
+        const network = new vis.Network(container, data, options);
+    
+        function escapeHtml(text) {
+            if (!text) return '';
+            return text
+                .replaceAll('&', '&amp;')
+                .replaceAll('<', '&lt;')
+                .replaceAll('>', '&gt;');
+        }
+    
+        function renderNodeDetail(nodeId) {
+            const node = nodes.get(nodeId);
+            if (!node) return;
+    
+            detailPanel.innerHTML = `
+                <div class="info-box">
+                    <div><span class="info-label">实体名称：</span>${escapeHtml(node.label)}</div>
+                    <div><span class="info-label">实体类型：</span>${escapeHtml(node.entity_type || 'Entity')}</div>
+                    <div><span class="info-label">是否中心实体：</span>${node.id === graphData.center ? '是' : '否'}</div>
+                </div>
+                <div class="info-box">
+                    <div class="info-label">说明</div>
+                    <div class="small">可继续点击关系边，查看该实体与其他节点之间的关系及证据来源。</div>
+                </div>
+            `;
+        }
+    
+        function renderEdgeDetail(edgeId) {
+    const edge = edges.get(edgeId);
+    if (!edge || !edge.data) return;
+
+    const d = edge.data;
+    let html = `
+        <div class="info-box">
+            <div><span class="info-label">起点实体：</span>${escapeHtml(d.from)}</div>
+            <div><span class="info-label">关系类型：</span>${escapeHtml(d.relation_full || d.label)}</div>
+            <div><span class="info-label">终点实体：</span>${escapeHtml(d.to)}</div>
+            <div><span class="info-label">关系类别：</span>${escapeHtml(d.relation_category || '其他')}</div>
+            <div><span class="info-label">证据条数：</span>${d.source_count || 0}</div>
+        </div>
+    `;
+
+    if (d.sources && d.sources.length > 0) {
+        html += `<div class="panel-title" style="font-size:16px; margin-top:6px;">证据来源</div>`;
+        d.sources.forEach((src) => {
+            html += `
+                <div class="source-item">
+                    <div><strong>文件：</strong>${escapeHtml(src.file_name || '')}</div>
+                    <div><strong>页码：</strong>${escapeHtml(String(src.page_display || src.page_span || src.page_num || '未知'))}</div>
+                    <div><strong>证据句：</strong>${escapeHtml(src.source_sentence || '')}</div>
+                </div>
+            `;
+        });
+    } else {
+        html += `<div class="empty-tip">暂无可展示的证据来源。</div>`;
+    }
+
+    detailPanel.innerHTML = html;
+}
+    
+        network.on("click", function(params) {
+            if (params.nodes.length > 0) {
+                renderNodeDetail(params.nodes[0]);
+                return;
+            }
+            if (params.edges.length > 0) {
+                renderEdgeDetail(params.edges[0]);
+                return;
+            }
+        });
+        const filterButtons = document.querySelectorAll(".filter-btn");
+
+function applyEdgeFilter(category) {
+    let filteredEdges = [];
+
+    if (category === "全部") {
+        filteredEdges = rawEdges;
+    } else {
+        filteredEdges = rawEdges.filter(e => e.relation_category === category);
+    }
+
+    // 根据边重新计算要显示的节点
+    const visibleNodeIds = new Set();
+    filteredEdges.forEach(e => {
+        visibleNodeIds.add(e.from);
+        visibleNodeIds.add(e.to);
+    });
+
+    // 中心节点始终保留
+    if (graphData.center) {
+        visibleNodeIds.add(graphData.center);
+    }
+
+    const filteredNodes = (graphData.nodes || []).filter(n => visibleNodeIds.has(n.id));
+
+    nodes.clear();
+    edges.clear();
+
+    nodes.add(filteredNodes);
+    edges.add(convertEdgesForVis(filteredEdges));
+
+    if (graphData.center && visibleNodeIds.has(graphData.center)) {
+        setTimeout(() => {
+            network.focus(graphData.center, {
+                scale: 1.0,
+                animation: {
+                    duration: 500,
+                    easingFunction: "easeInOutQuad"
+                }
+            });
+        }, 200);
+    }
+}
+
+filterButtons.forEach(btn => {
+    btn.addEventListener("click", function() {
+        filterButtons.forEach(b => b.classList.remove("active"));
+        this.classList.add("active");
+        const category = this.getAttribute("data-filter");
+        applyEdgeFilter(category);
+    });
+});
+        if (graphData.center) {
+            setTimeout(() => {
+                network.focus(graphData.center, {
+                    scale: 1.0,
+                    animation: {
+                        duration: 800,
+                        easingFunction: "easeInOutQuad"
+                    }
+                });
+            }, 500);
+        }
+    </script>
+</body>
+</html>

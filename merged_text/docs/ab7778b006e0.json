@@ -1,0 +1,114 @@
+{
+  "doc_id": "ab7778b006e0",
+  "file_name": "GBT 40599-2021继电保护及安全自动装置在线监视与分析技术规范.pdf",
+  "relative_path": "中国华能集团有限公司2025年度风电技术监督用标准\\3-风电继保监督标准\\GBT 40599-2021继电保护及安全自动装置在线监视与分析技术规范.pdf",
+  "title": "GBT 40599-2021继电保护及安全自动装置在线监视与分析技术规范",
+  "doc_type": "standard",
+  "source_summary": {
+    "has_text_clean": true,
+    "has_ocr_clean": false,
+    "selected_source_stats": {
+      "text_clean": 12
+    }
+  },
+  "page_count": 12,
+  "merged_text": "[PAGE 1]\n犐犆犛２９．２４０\n犆犆犛犉２１\n! \" # $ % & ' ' ( ) *\n犌犅／犜４０５９９—２０２１\n!\"#$%&'()*+,-./0\n\n犜犲犮犺狀犻犮犪犾狊狆犲犮犻犳犻犮犪狋犻狅狀犳狅狉狉犲犾犪狔狆狉狅狋犲犮狋犻狅狀犪狀犱狊犲犮狌狉犻狋狔犪狌狋狅犿犪狋犻犮\n犲狇狌犻狆犿犲狀狋狅狀犾犻狀犲犿狅狀犻狋狅狉犻狀犵犪狀犱犪狀犪犾狔狊犻狊\n２０２１１０１１78\n２０２２０５０１9:\n' ( + , - . / 0 1 2\n' ( ) * 3 / 0 4 5 6\n7 8\n[PAGE 3]\n# $\nV)*WXＧＢ／Ｔ１．１—２０２０《YZ[\\]^_ `１aG：YZ[)*bc7-de%_》b%.\nde。\nfghV)*bijklm<nopq。V)*bRSr7stuvwpqbxy。\nV)*z{|}~。\nV)*zU|}YZ[+（ＳＡＣ／ＴＣ４４６）。\nV)*de：|}|}~{、{|}~、{|\n¡}}~{、|¢£¤}~、|¥¦}~、|£§¤}~\n、 ¨ ©ª«}¬、¦¨­¡ª«\\®+、|} ¨¯°[±²、³\nª}¬±²、|} ©±²、´µ¶©ª«¯°[、·¸¹º¯°[\n、|»¼¤}~、|½¦¤}~、|·¸¾}~、|¿À¾}~、\n|»Á¤}~、|kÂÃÁa}~、|Ä¦¤}~、|ÅÆ¤}~\n、|ÇÈ}~。\nV)*K2deÉ：ÊËÌ、ÍÎÏ、ÐÑÒ、Ó|Ô、ÕÖ、Ê)×、ØÙÚ、ÛÜ、ÊÝÞ、ßà、\ná|N、âãØ、äå、Íæç、èéé、êëì、íÝ、îïð、ñòó、áô、õö÷、øù、ßúû、ü¹、\ný¸þ、ÿò¹、!\"#、ß$、%&'、ÿÆ(、Ó)、*&、+¿,、-.、Ø/、012、Õ34、ä5、\n678、0£Ì、9:、ß;、<Ó、0=>、Êë?、Êà@。\nⅢ\n犌犅／犜４０５９９—２０２１\n库七七 www.kqqw.com 提供\n[PAGE 4]\n%&'()*+,-./01234\n56789:\n１ :;\nV)*%.Aª}«DoTU¯°BCDEEFGHF(bG467、=>?@-IJ、LMN\nO、F(;<、&<H23。\nV)*I(Jª}«DoTU¯°BCDEEFGHF(45，K]LM45;<NO、P、\nQR-bSM。\n２ 9:<=>?@\nTU)*{bklVW){b%#&'(X7YV)*Zsm[b\\]。^{，g_`b'()\n*，aM_`bFbcVI(JV)*；sg_`b'()*，^decV（fghbij）I(J\nV)*。\nＧＢ／Ｔ２２３８６ }~45klLMmnbV(op\nＧＢ／Ｔ３２８９０ ª}«DＩＥＣ６１８５０\\®F(AB\nＧＢ／Ｔ３６５７２ }~E45qTUrD^_\nＤＬ／Ｔ４７６ }~45stLMV=F(uvw\nＤＬ／Ｔ８６０（haG） x}9V=q-45\nＤＬ／Ｔ１２４１ }~\\yzmnr+%#\n３ 8ABCD\nＧＢ／Ｔ２２３８６、ＧＢ／Ｔ３２８９０、ＤＬ／Ｔ４７６、ＤＬ／Ｔ８６０（haG）、ＤＬ／Ｔ１２４１{.b+,-./I(\nJV)*。\n３．１\n%&'()*+,-./0123456EFGHI 犿犪犻狀狊狋犪狋犻狅狀狅犳狋犺犲狅狀犾犻狀犲犿狅狀犻狋狅狉犻狀犵犪狀犱\n犪狀犪犾狔狊犻狊狅犳狉犲犾犪狔狆狉狅狋犲犮狋犻狅狀犪狀犱狊犲犮狌狉犻狋狔犪狌狋狅犿犪狋犻犮犲狇狌犻狆犿犲狀狋\na|D、C、QiH}h，~ª}«DoTU¯°BCDEEFGH;<b45，sª\n}«DoTU¯°BC@{EFGH;<。\nJ：K9:。\n３．２\n%&'()*+,-./0123456EFKHI 狊狋犪狋犻狅狀狊犻犱犲狅犳狅狀犾犻狀犲犿狅狀犻狋狅狉犻狀犵犪狀犱犪狀犪犾\n狔狊犻狊狅犳狉犲犾犪狔狆狉狅狋犲犮狋犻狅狀犪狀犱狊犲犮狌狉犻狋狔犪狌狋狅犿犪狋犻犮犲狇狌犻狆犿犲狀狋\na|DR}8、x}9、n9H89，~ª}«DoTU¯°BCDEEFGH;<b45，\nsª}«DoTU¯°BC=>?@、ABCD、EF、GH、、=>IJH;<。\nJ：89:。\n\n犌犅／犜４０５９９—２０２１\n库七七 www.kqqw.com 提供\n[PAGE 5]\n４ LMNO\n４．１ K9:FfgLMNO、EF、GH、PQ、RS;<。\n４．２ 89:Ffg=>?@、ABCD、EFGH;<。\n４．３ 89:?@=>F、Z，Kot·K9:。89:FLMAB·K9:，K9:\n¯°C89:bAB。\n４．４ K9:89:bV=vwF«K9:89:ä、mV。\n４．５ K9:bLMNOsLM、AB、F(H;<，F«LMb&、0&、Z\n&，<sLF(;<50bAB、LM、qV=、Ér{、45PQyoGHO H\n。\n４．６ K9:-89:qTUrDF¡ＧＢ／Ｔ３６５７２b%.。\n５ EFPQ\n５．１ 45F¢£¤·GY89:、LM、K9:，DEEFGH45¥B£¤F¡¦１b%.。\nR１ 0123456EFSTUVWX\n５．２ 89:F?@ª}«DoTU¯°BC、W®uN§、qN§-¨©ª«BC=>。\n５．３ 89:F~§¬K9:IJLMb;<。K9:FK9:LM­Rb;<。\n５．４ 89:?(®¡p¬K9:IJLM。\n\n犌犅／犜４０５９９—２０２１\n库七七 www.kqqw.com 提供\n[PAGE 6]\n６ KHIYZ\n６．１ [\\]^\n６．１．１ [\\]^_`\n６．１．１．１ 89:F?@bmª}«DBC=>fg：\nａ） «D°]=>：«D¯*、«Dª«；\nｂ） °±=>：¨©=²、°±=²、V=\\³、«D;<´µ；\nｃ） DEER=>：m?¶、.·¸²、BC¹L、«D.·、kaºlEF；\nｄ） ºlx=>：«D»=、«D¼½、«D;<ºl、BCºl、¾¡¿]«D;<ÀÁ；\nｅ） {ÂÃ= >：{  Â Ã ) *，f g ª « ) * { b {  ) *（．ｍｉｄ）- Ä Å ) *（．ｄｅｓ）Æ Ç\n)*；\nｆ） N§OÈ=>：N§vwÉÊ、P8、B²、Ë*cV、Ì<}ÍN§（ＩＥＤ）Î:ÍÏÐÑ\nÒÓÔ（ＣＲＣ）ÊH。\n６．１．１．２ 89:F?@b®«DBC=>fg：\nａ） «D°]=>：«D¯*、«Dª«；\nｂ） °±=>：¨©=²、°±=²、V=\\³、«D;<´µ；\nｃ） DEER=>：m®?¶、BC¹L、«D.·、kaºlEF；\nｄ） ºlx=>：«D»=、«D¼½、«D;<ºl、BCºl；\nｅ） N§OÈ=>：N§vwÉÊ、P8、B²、Ë*cVH。\n６．１．１．３ 89:F?@bTU¯°BC=>fg：\nａ） BC°]=>：°]¯*、¨©LM、BCª«；\nｂ） °±=>：¨©=²、°±=²、V=\\³、BC´µ=²；\nｃ） DEER=>：}¬Õ?¶、.·¸²、N§¹L、Ö.·、BC=>、BCt×、ØÙo\n¼½=>、kaºlEF；\nｄ） ºlx=>：ØÕ»=、Ö;<¼½、Ö;<ºl、BCºl、¾¡¿]Ö;<\nÀÁ；\nｅ） N§OÈ=>：N§vwÉÊ、P8、B²、Ë*cV、ＩＥＤÎ:ÍＣＲＣÓÔÊH。\n６．１．１．４ 89:F?@bKì=>fg：\nａ） VÚ}、}¼、ØÕ；\nｂ） KìÛõ°±=>；\nｃ） ¬V(bÜbx}9¯*（ＧＯＯＳＥ）ÝÞV=ºl-?¶·（ＳＶ）ÝÞV=ºl；\nｄ） DEER=>：ßàá;â、BCã、BC\\]}¼H；\nｅ） N§OÈ=>：N§vwÉÊ、P8、B²、Ë*cV、ＩＥＤÎ:ÍＣＲＣÓÔÊH。\n６．１．１．５ 89:F?@bÌ<ä:=>fg：\nａ） VÚØÕ；\nｂ） Ûõ°±=>；\nｃ） ＧＯＯＳＥÝÞV=ºl；\nｄ） åæçÓ=>；\nｅ） DEER=>：ßàá;â、BCã、BC\\]}¼H；\nｆ） N§OÈ=>：N§vwÉÊ、P8、B²、Ë*cV、ＩＥＤÎ:ÍＣＲＣÓÔÊH。\n\n犌犅／犜４０５９９—２０２１\n库七七 www.kqqw.com 提供\n[PAGE 7]\n６．１．１．６ 89:F?@bmnr=>fg：\nａ） \\]ºl；\nｂ） Ûõ°±=>；\nｃ） :C=>；\nｄ） :V=ºl、Õ=>；\nｅ） N§OÈ=>：N§vwÉÊ、P8、B²、Ë*cVH。\n６．１．１．７ 89:F?@b¨©ª«BC=>fg：\nａ） Ûõ°±=>；\nｂ） .·HDEER=>；\nｃ） ¨©ª«)*Uè；\nｄ） ¨©ª«)*：Yé)*（．ｈｄｒ）、C)*（．ｃｆｇ）、LM)*（．ｄａｔ）、LMAB)*（．ｄｍｆ）；\nｅ） ¨©ª«êë：t、¨©B、¨©N§、Rìcí、¨©!îb}、}¼·、Øxï\n³H；\nｆ） N§OÈ=>：BCvwÉÊ、P8、B²、Ë*cVH。\n６．１．２ [\\]^NO\n６．１．２．１ ª}«D、TU¯°BC、W®uN§、qN§-¨©ª«BC·89:b=>，FK\n°·、ðñ·，K°·¡pFfgst·、.t·。\n６．１．２．２ °]¯*、°±=>、ºlx=>、ª«UèoêëFst·89:。\n６．１．２．３ kaºlERÕ、m®?¶F.t·89:。\n６．１．２．４ ª«)*、DEER=>、{ÂÃ=>、N§OÈ=>、_à=>Fðñ·89:。\n６．１．３ [\\]^ab\n６．１．３．１ °]=>、°±=>、DEER=>、ºlx=>、{ÂÃ=>、_à=>、btÓÔ=>、\nª«Uè、ª«êë-ª«)*HF®àIK9:。\n６．１．３．２ N§OÈ=>Fòóî·K9:。\n６．２ cTd(\n６．２．１ cTeT\n６．２．１．１ 89:45FOÈ=>AB、¯Q=>AB、àÙBCV=ºl=>ABH¯ô=>A\nB，Ì<õö°±=>ABH。\n６．２．１．２ 89:F8945CAB。Ì<x}9F8945CÄÅ)*（ＳＣＤ），894\n5CÄÅ)*f÷0øùú=>AB（ＳＳＤ）。\n６．２．１．３ 89:89ＩＥＤN§ûQÄÅoßüýÞb=>AB（ＳＰＣＤ）。\n６．２．１．４ 89:BCER=>CAB，fg：\nａ） N§þ*sÿ[ÄÅC；\nｂ） N§°±õö=>ÄÅ；\nｃ） ß!ûQ:bF4ÄÅ；\nｄ） Ì<x}9Ë¼½\"øÎýÞbF4ÄÅ；\nｅ） Ì<x}9öÝ°±=>AB\"øÎýÞbF4ÄÅ。\n\n犌犅／犜４０５９９—２０２１\n库七七 www.kqqw.com 提供\n[PAGE 9]\n６．３．２．２ 89:¨©GH;<：\nａ） Fá@BC°]、°±、ºlx=>yo¨©ª«，ÔY¨©ë°；\nｂ） F~§¨©«,)*GH;<。\n６．３．２．３ 89:~§BQ;<。BQbÜfg¼½、m®?¶、.·¸、ÐC、>°}\nH。\n６．３．２．４ 89:.·PQ;<：\nａ） F.·(D;<；\nｂ） ~§.·¯°;b;<。\n６．３．２．５ 89:}¨©GH、67.、Ì<8±、¯°ÓA、¯°BQ、.·;bH;<FDEG\nHî，/cF·K9:。\n７ [\\hi\n７．１ LMNO\n７．１．１ 89:? @ = > I J F   K ° · 、ð ñ ·  ¡ p，K ° ·  ¡ p F f g s t · 、. t\n·。\n７．１．２ 89:FK9:GHðñ9，mIFK9:¢89:ðñLM，J¢ª}«D、TU¯°B\nC、W®uN§、qN§、¨©ª«BCðñLM。\n７．１．３ K9:、89:KL(yzV=，MNsOJ２Ｍｂｉｔ／ｓ。\n７．１．４ 89:FW=>B、N§#$.·=>PK9:。\n７．１．５ K9:F?(s/V=vwoABb89:=>bàÙ。\n７．２ hiNO\n７．２．１ 89:N§ºl、V=\\³、°]¯*、°±=>、ºlx=>、btÓÔ=>、DEER\nÛõ=>Fst·K9:。\n７．２．２ 89:BCkaDEER=>F.t·K9:。\n７．２．３ 89:BCª«)*、DEER=>、{ÂÃ=>、_à=>、OÈ=>、Ì<õöë°、¯°\nBQë°、.·;bë°Fðñ·K9:。\n８ GHIYZ\n８．１ jklm\n８．１．１ LMNOF50bLM、AB-F(，QK9:DEEFGH;<。\n８．１．２ LMfgTU;<：\nａ） NOFLDEEFGHF(:9Û7LMb500RLMS;<；\nｂ） NOF#$}0øì*¹L、ùúo¡p=>；\nｃ） NOF«LM&、ot&、Z&、0&、%#&HLMTÕPQ23。\n８．１．３ ABfgTUkl：\nａ） NOFDUl89:ABb4V·，Æ?I(JK9:b50AB；\nｂ） NOABFWX89}0øì*ª}«D、TU¯°BC、W®uN§、¨©ª«BC\nb4ÄÅ；\n\n犌犅／犜４０５９９—２０２１\n库七七 www.kqqw.com 提供\n[PAGE 10]\nｃ） NOF+MK9:F(Y2，bLMABJZ&[\\、ij、NCÔ／]HPQ；\nｄ） LM9:oàÙW®FYb}0øN§oª}«D、TU¯°BC、W®uN§、qN\n§、¨©ª«BCABLM^_、N§bÜYv、LMbÜc7H%#[`Q。\n８．１．４ F(kl：\nａ） NO¬;<Aa50bO ，fg50b、c、_à、y\n、LMGHde、LMmF[H；\nｂ） F(AabgfPQ?(50ÉcbPQ、%#göo、%#LMmà、50\nggfH¡p。\n８．２ 23YZ\n８．２．１ DEEF;<¡TU23：\nａ） Gu、Gh、GJG¸ª}«D、TU¯°BC、W®uN§、qN§、¨©ª«BC\nbU5mF[)*；\nｂ） F45h-89hºlEF{，)*ºl、Ûõ°±-°]=>；\nｃ） FBCºlEF{，BC½i*j=²。\n８．２．２ 45ºlEF;<：\nａ） F)*45#$BC¯*；\nｂ） F)*45#$N§°±ï³；\nｃ） F)*45#$dkRÔb}¨©l³=>；\nｄ） F)*45#$89:N§bV=ºl。\n８．２．３ 89／3ºlEF;<：\nａ） F)*ª}«D、TU¯°BC、W®uN§、qN§bºl-V=ºl；\nｂ） F)*BCb°]、°±、ºlxH=>；\nｃ） +Mª}«D、TU¯°BC、W®uN§-qN§bûQ2àqùú，)*ûQÝÞ\no^:bºl。\n８．２．４ BCºlEF;<：\nａ） F~§ª}«D、TU¯°BC、W®uN§ºlDEEFb;<；\nｂ） F)*BCb°]、°±、ºlxH=>；\nｃ） )*ßüýÞºl=>；\nｄ） ?(¦,[¡p)*ß!、ã、}¼HDEER=>。\n８．３ 56YZ\n８．３．１ N§mnºlGH;<：\nａ） F~§N§mnºlbopGH;<；\nｂ） ª}«D¯°BQGH、67Ì<õöH;<。\n８．３．２ K9:F<E:Ç89:b=>，ÔY}¨©EGHcF，WX}¨©B、ì*\n（¸q）H，EÞ¨©Fr:¨©Rìcí，WX}¨©ª}«D、TU¯°BC°]£¤\n4。\n８．３．３ K9:F~§.·)*、0R;bH;<。\n８．４ noYZ\n８．４．１ K9:FbBCbN§vwÉÊ、B²、cV、ÓÔÊ、®sÔYt、N§8H=>b5\n\n犌犅／犜４０５９９—２０２１\n库七七 www.kqqw.com 提供\n[PAGE 11]\nOPQ-(t。\n８．４．２ K9:Fb89:àÙï³、BCÀï³、º³、V=ºlò5O。\n８．４．３ K9:Fbª}«D、TU¯°BCb°]、°±、ºlxHLMò5O。\n８．４．４ K9:/5O=>WN.bÍ`ÔY5Oëè，ëèyèo¦,c¡pòmF[\n)*。\n８．５ pqYZ\n８．５．１ K9:FVW3uBCy ＷＥＢ,p¬v.TU¸RS=>，(w+Mxchw#y.\n=>。\n８．５．２ K9:RS;<：\nａ） N§bU5mF[z{，fg45h、89h、3h、BCh=>bGu)*；\nｂ） K9:EFGH;<=>b(D、^H；\nｃ） }¨©ë°=>b(D、^、|}H；\nｄ） ª«)*b«,z{、GHyoT~H；\nｅ） .5Oëè。\n９ <ZNO\n９．１ *+NO\n９．１．１ 45c7TU¡TU%.：\nａ） 89:TU¸qKLMmF?$qTU3uBCJrHTU；\nｂ） 89:¬ô²b-V=Fa|¬bBC。\n９．１．２ K9:-89:Aa-N§FsË*TU、¿]45-4VË*TU、O r-qN§T\nU、DEEFGHN§TUHVGTU。\n９．１．３ K9:89:KbLMIJFst&、m&、Z&、%#&o«&23。\n９．２ KHI<ZNO\n９．２．１ 89:FLBC80-=>0R。\n９．２．２ 89:LM0RF、Qi、67õö、¨©GHH23，KTU23：\nａ） BCkaDEER=>0RFs[J３，0R3Fs´J２ｈ；\nｂ） K9:ðñ·=>F0RFs[J１；\nｃ） m®?¶=>F.`0R，=>F0RFs[J１Ç，0R3Fs´J２ｈ。\n９．２．３ /tàÙbBCLÕFsOJ２５５O。\n９．３ GHI<ZNO\n９．３．１ K9:0RlÕTU23：\nａ） K9:=>0RtFs[J３；\nｂ） ®à2à89LÕFs[J５１２。\n９．３．２ K9:st&TU23：\nａ） TU¸=>RS;<bIFtFsJ１ｍｉｎ；\nｂ） }¨©t，K9:áP89:ª«)*î，ÔYK¨©êëbtFsJ５ｍｉｎ。\n\n犌犅／犜４０５９９—２０２１\n[PAGE 12]\n９．４ jkhi<ZNO\n９．４．１ °]¯*、°±=>、ºlx=>zBCP89:IJt-z89:PK9:IJt\nFsJ５ｓ。\n９．４．２ ª«ybðñ·=>zBCP89:IJt-z89:PK9:IJtFs\nJ１ｍｉｎ。\n９．４．３ sJ５ＭＢｙｔｅbª«)*，zBCP89:IJt-z89:PK9:IJtFs\nJ３ｍｉｎ。\n犌犅／犜４０５９９—２０２１",
+  "pages": [
+    {
+      "page_num": 1,
+      "selected_source": "text_clean",
+      "text": "犐犆犛２９．２４０\n犆犆犛犉２１\n! \" # $ % & ' ' ( ) *\n犌犅／犜４０５９９—２０２１\n!\"#$%&'()*+,-./0\n\n犜犲犮犺狀犻犮犪犾狊狆犲犮犻犳犻犮犪狋犻狅狀犳狅狉狉犲犾犪狔狆狉狅狋犲犮狋犻狅狀犪狀犱狊犲犮狌狉犻狋狔犪狌狋狅犿犪狋犻犮\n犲狇狌犻狆犿犲狀狋狅狀犾犻狀犲犿狅狀犻狋狅狉犻狀犵犪狀犱犪狀犪犾狔狊犻狊\n２０２１１０１１78\n２０２２０５０１9:\n' ( + , - . / 0 1 2\n' ( ) * 3 / 0 4 5 6\n7 8",
+      "is_toc_page": false,
+      "is_filtered": false,
+      "filter_reason": ""
+    },
+    {
+      "page_num": 2,
+      "selected_source": "text_clean",
+      "text": "! \"\n!\"\nⅢ\n\n１ #$\n\n２ %#&'()*\n\n３ +,-./\n\n４ 0123\n\n５ 4567\n\n６ 89:;<\n\n６．１ =>?@\n\n６．２ ABCD\n\n６．３ 89:EFGH\n\n７ =>IJ\n\n７．１ 0123\n\n７．２ IJ23\n\n８ K9:;<\n\n８．１ LMNO\n\n８．２ EF;<\n\n８．３ GH;<\n\n８．４ PQ;<\n\n８．５ RS;<\n\n９ &<23\n\n９．１ TU23\n\n９．２ 89:&<23\n\n９．３ K9:&<23\n\n９．４ LMIJ&<23\n\nⅠ\n犌犅／犜４０５９９—２０２１",
+      "is_toc_page": true,
+      "is_filtered": false,
+      "filter_reason": ""
+    },
+    {
+      "page_num": 3,
+      "selected_source": "text_clean",
+      "text": "# $\nV)*WXＧＢ／Ｔ１．１—２０２０《YZ[\\]^_ `１aG：YZ[)*bc7-de%_》b%.\nde。\nfghV)*bijklm<nopq。V)*bRSr7stuvwpqbxy。\nV)*z{|}~。\nV)*zU|}YZ[+（ＳＡＣ／ＴＣ４４６）。\nV)*de：|}|}~{、{|}~、{|\n¡}}~{、|¢£¤}~、|¥¦}~、|£§¤}~\n、 ¨ ©ª«}¬、¦¨­¡ª«\\®+、|} ¨¯°[±²、³\nª}¬±²、|} ©±²、´µ¶©ª«¯°[、·¸¹º¯°[\n、|»¼¤}~、|½¦¤}~、|·¸¾}~、|¿À¾}~、\n|»Á¤}~、|kÂÃÁa}~、|Ä¦¤}~、|ÅÆ¤}~\n、|ÇÈ}~。\nV)*K2deÉ：ÊËÌ、ÍÎÏ、ÐÑÒ、Ó|Ô、ÕÖ、Ê)×、ØÙÚ、ÛÜ、ÊÝÞ、ßà、\ná|N、âãØ、äå、Íæç、èéé、êëì、íÝ、îïð、ñòó、áô、õö÷、øù、ßúû、ü¹、\ný¸þ、ÿò¹、!\"#、ß$、%&'、ÿÆ(、Ó)、*&、+¿,、-.、Ø/、012、Õ34、ä5、\n678、0£Ì、9:、ß;、<Ó、0=>、Êë?、Êà@。\nⅢ\n犌犅／犜４０５９９—２０２１\n库七七 www.kqqw.com 提供",
+      "is_toc_page": false,
+      "is_filtered": false,
+      "filter_reason": ""
+    },
+    {
+      "page_num": 4,
+      "selected_source": "text_clean",
+      "text": "%&'()*+,-./01234\n56789:\n１ :;\nV)*%.Aª}«DoTU¯°BCDEEFGHF(bG467、=>?@-IJ、LMN\nO、F(;<、&<H23。\nV)*I(Jª}«DoTU¯°BCDEEFGHF(45，K]LM45;<NO、P、\nQR-bSM。\n２ 9:<=>?@\nTU)*{bklVW){b%#&'(X7YV)*Zsm[b\\]。^{，g_`b'()\n*，aM_`bFbcVI(JV)*；sg_`b'()*，^decV（fghbij）I(J\nV)*。\nＧＢ／Ｔ２２３８６ }~45klLMmnbV(op\nＧＢ／Ｔ３２８９０ ª}«DＩＥＣ６１８５０\\®F(AB\nＧＢ／Ｔ３６５７２ }~E45qTUrD^_\nＤＬ／Ｔ４７６ }~45stLMV=F(uvw\nＤＬ／Ｔ８６０（haG） x}9V=q-45\nＤＬ／Ｔ１２４１ }~\\yzmnr+%#\n３ 8ABCD\nＧＢ／Ｔ２２３８６、ＧＢ／Ｔ３２８９０、ＤＬ／Ｔ４７６、ＤＬ／Ｔ８６０（haG）、ＤＬ／Ｔ１２４１{.b+,-./I(\nJV)*。\n３．１\n%&'()*+,-./0123456EFGHI 犿犪犻狀狊狋犪狋犻狅狀狅犳狋犺犲狅狀犾犻狀犲犿狅狀犻狋狅狉犻狀犵犪狀犱\n犪狀犪犾狔狊犻狊狅犳狉犲犾犪狔狆狉狅狋犲犮狋犻狅狀犪狀犱狊犲犮狌狉犻狋狔犪狌狋狅犿犪狋犻犮犲狇狌犻狆犿犲狀狋\na|D、C、QiH}h，~ª}«DoTU¯°BCDEEFGH;<b45，sª\n}«DoTU¯°BC@{EFGH;<。\nJ：K9:。\n３．２\n%&'()*+,-./0123456EFKHI 狊狋犪狋犻狅狀狊犻犱犲狅犳狅狀犾犻狀犲犿狅狀犻狋狅狉犻狀犵犪狀犱犪狀犪犾\n狔狊犻狊狅犳狉犲犾犪狔狆狉狅狋犲犮狋犻狅狀犪狀犱狊犲犮狌狉犻狋狔犪狌狋狅犿犪狋犻犮犲狇狌犻狆犿犲狀狋\na|DR}8、x}9、n9H89，~ª}«DoTU¯°BCDEEFGH;<b45，\nsª}«DoTU¯°BC=>?@、ABCD、EF、GH、、=>IJH;<。\nJ：89:。\n\n犌犅／犜４０５９９—２０２１\n库七七 www.kqqw.com 提供",
+      "is_toc_page": false,
+      "is_filtered": false,
+      "filter_reason": ""
+    },
+    {
+      "page_num": 5,
+      "selected_source": "text_clean",
+      "text": "４ LMNO\n４．１ K9:FfgLMNO、EF、GH、PQ、RS;<。\n４．２ 89:Ffg=>?@、ABCD、EFGH;<。\n４．３ 89:?@=>F、Z，Kot·K9:。89:FLMAB·K9:，K9:\n¯°C89:bAB。\n４．４ K9:89:bV=vwF«K9:89:ä、mV。\n４．５ K9:bLMNOsLM、AB、F(H;<，F«LMb&、0&、Z\n&，<sLF(;<50bAB、LM、qV=、Ér{、45PQyoGHO H\n。\n４．６ K9:-89:qTUrDF¡ＧＢ／Ｔ３６５７２b%.。\n５ EFPQ\n５．１ 45F¢£¤·GY89:、LM、K9:，DEEFGH45¥B£¤F¡¦１b%.。\nR１ 0123456EFSTUVWX\n５．２ 89:F?@ª}«DoTU¯°BC、W®uN§、qN§-¨©ª«BC=>。\n５．３ 89:F~§¬K9:IJLMb;<。K9:FK9:LM­Rb;<。\n５．４ 89:?(®¡p¬K9:IJLM。\n\n犌犅／犜４０５９９—２０２１\n库七七 www.kqqw.com 提供",
+      "is_toc_page": false,
+      "is_filtered": false,
+      "filter_reason": ""
+    },
+    {
+      "page_num": 6,
+      "selected_source": "text_clean",
+      "text": "６ KHIYZ\n６．１ [\\]^\n６．１．１ [\\]^_`\n６．１．１．１ 89:F?@bmª}«DBC=>fg：\nａ） «D°]=>：«D¯*、«Dª«；\nｂ） °±=>：¨©=²、°±=²、V=\\³、«D;<´µ；\nｃ） DEER=>：m?¶、.·¸²、BC¹L、«D.·、kaºlEF；\nｄ） ºlx=>：«D»=、«D¼½、«D;<ºl、BCºl、¾¡¿]«D;<ÀÁ；\nｅ） {ÂÃ= >：{  Â Ã ) *，f g ª « ) * { b {  ) *（．ｍｉｄ）- Ä Å ) *（．ｄｅｓ）Æ Ç\n)*；\nｆ） N§OÈ=>：N§vwÉÊ、P8、B²、Ë*cV、Ì<}ÍN§（ＩＥＤ）Î:ÍÏÐÑ\nÒÓÔ（ＣＲＣ）ÊH。\n６．１．１．２ 89:F?@b®«DBC=>fg：\nａ） «D°]=>：«D¯*、«Dª«；\nｂ） °±=>：¨©=²、°±=²、V=\\³、«D;<´µ；\nｃ） DEER=>：m®?¶、BC¹L、«D.·、kaºlEF；\nｄ） ºlx=>：«D»=、«D¼½、«D;<ºl、BCºl；\nｅ） N§OÈ=>：N§vwÉÊ、P8、B²、Ë*cVH。\n６．１．１．３ 89:F?@bTU¯°BC=>fg：\nａ） BC°]=>：°]¯*、¨©LM、BCª«；\nｂ） °±=>：¨©=²、°±=²、V=\\³、BC´µ=²；\nｃ） DEER=>：}¬Õ?¶、.·¸²、N§¹L、Ö.·、BC=>、BCt×、ØÙo\n¼½=>、kaºlEF；\nｄ） ºlx=>：ØÕ»=、Ö;<¼½、Ö;<ºl、BCºl、¾¡¿]Ö;<\nÀÁ；\nｅ） N§OÈ=>：N§vwÉÊ、P8、B²、Ë*cV、ＩＥＤÎ:ÍＣＲＣÓÔÊH。\n６．１．１．４ 89:F?@bKì=>fg：\nａ） VÚ}、}¼、ØÕ；\nｂ） KìÛõ°±=>；\nｃ） ¬V(bÜbx}9¯*（ＧＯＯＳＥ）ÝÞV=ºl-?¶·（ＳＶ）ÝÞV=ºl；\nｄ） DEER=>：ßàá;â、BCã、BC\\]}¼H；\nｅ） N§OÈ=>：N§vwÉÊ、P8、B²、Ë*cV、ＩＥＤÎ:ÍＣＲＣÓÔÊH。\n６．１．１．５ 89:F?@bÌ<ä:=>fg：\nａ） VÚØÕ；\nｂ） Ûõ°±=>；\nｃ） ＧＯＯＳＥÝÞV=ºl；\nｄ） åæçÓ=>；\nｅ） DEER=>：ßàá;â、BCã、BC\\]}¼H；\nｆ） N§OÈ=>：N§vwÉÊ、P8、B²、Ë*cV、ＩＥＤÎ:ÍＣＲＣÓÔÊH。\n\n犌犅／犜４０５９９—２０２１\n库七七 www.kqqw.com 提供",
+      "is_toc_page": false,
+      "is_filtered": false,
+      "filter_reason": ""
+    },
+    {
+      "page_num": 7,
+      "selected_source": "text_clean",
+      "text": "６．１．１．６ 89:F?@bmnr=>fg：\nａ） \\]ºl；\nｂ） Ûõ°±=>；\nｃ） :C=>；\nｄ） :V=ºl、Õ=>；\nｅ） N§OÈ=>：N§vwÉÊ、P8、B²、Ë*cVH。\n６．１．１．７ 89:F?@b¨©ª«BC=>fg：\nａ） Ûõ°±=>；\nｂ） .·HDEER=>；\nｃ） ¨©ª«)*Uè；\nｄ） ¨©ª«)*：Yé)*（．ｈｄｒ）、C)*（．ｃｆｇ）、LM)*（．ｄａｔ）、LMAB)*（．ｄｍｆ）；\nｅ） ¨©ª«êë：t、¨©B、¨©N§、Rìcí、¨©!îb}、}¼·、Øxï\n³H；\nｆ） N§OÈ=>：BCvwÉÊ、P8、B²、Ë*cVH。\n６．１．２ [\\]^NO\n６．１．２．１ ª}«D、TU¯°BC、W®uN§、qN§-¨©ª«BC·89:b=>，FK\n°·、ðñ·，K°·¡pFfgst·、.t·。\n６．１．２．２ °]¯*、°±=>、ºlx=>、ª«UèoêëFst·89:。\n６．１．２．３ kaºlERÕ、m®?¶F.t·89:。\n６．１．２．４ ª«)*、DEER=>、{ÂÃ=>、N§OÈ=>、_à=>Fðñ·89:。\n６．１．３ [\\]^ab\n６．１．３．１ °]=>、°±=>、DEER=>、ºlx=>、{ÂÃ=>、_à=>、btÓÔ=>、\nª«Uè、ª«êë-ª«)*HF®àIK9:。\n６．１．３．２ N§OÈ=>Fòóî·K9:。\n６．２ cTd(\n６．２．１ cTeT\n６．２．１．１ 89:45FOÈ=>AB、¯Q=>AB、àÙBCV=ºl=>ABH¯ô=>A\nB，Ì<õö°±=>ABH。\n６．２．１．２ 89:F8945CAB。Ì<x}9F8945CÄÅ)*（ＳＣＤ），894\n5CÄÅ)*f÷0øùú=>AB（ＳＳＤ）。\n６．２．１．３ 89:89ＩＥＤN§ûQÄÅoßüýÞb=>AB（ＳＰＣＤ）。\n６．２．１．４ 89:BCER=>CAB，fg：\nａ） N§þ*sÿ[ÄÅC；\nｂ） N§°±õö=>ÄÅ；\nｃ） ß!ûQ:bF4ÄÅ；\nｄ） Ì<x}9Ë¼½\"øÎýÞbF4ÄÅ；\nｅ） Ì<x}9öÝ°±=>AB\"øÎýÞbF4ÄÅ。\n\n犌犅／犜４０５９９—２０２１\n库七七 www.kqqw.com 提供",
+      "is_toc_page": false,
+      "is_filtered": false,
+      "filter_reason": ""
+    },
+    {
+      "page_num": 8,
+      "selected_source": "text_clean",
+      "text": "６．２．２ cTfg)d(\n６．２．２．１ K9:F¢89:#$AB，ABz89:òCD。\n６．２．２．２ 89:ABCDbC{，89:、K9:ABb/%&eFot、Z。\n６．２．２．３ 89:F~§ＳＣＤ)*0'&Q(;<，ＳＣＤ)*x&î，F?$mF[+)*ＳＣＤ)*\nx&#$。\n６．２．２．４ 89:、K9:F~§+MAB¯°ÔYDEEFGH¦,-b;<。\n６．２．２．５ ABx[î，89:FK°V.K9:。\n６．２．２．６ 89:FK9:$89:AB)*。\n６．２．２．７ 89:F/AB=>òóî·K9:。\n６．２．２．８ K9:#$eABî，F«0x&!îbLMAB，1F«x&!îABoLMbm(&。\n６．３ KHI2356\n６．３．１ KHI23YZ\n６．３．１．１ 89ºlEF;<：\nａ） F)*U9ª}«D、TU¯°BC、¨©ª«BC、W®uN§、qN§bºl-V=\nºl；\nｂ） F)*U9BCb°]、°±、ºlxH=>；\nｃ） +MU9ª}«D、TU¯°BC、W®uN§-qN§bûQ2àqùú，)*U9\nûQÝÞo^:bºl。\n６．３．１．２ 3ºlEF;<：\nａ） F4J0øKàE¦mF[U5)*V3ª}«D、W®uN§、qN§bºl-V\n=ºl；\nｂ） F)*V3BCb°]、°±、ºlxH=>；\nｃ） +MV3ª}«D、W®uN§-qN§bW®uûQ2àqùú，stERûQý\nÞ-£¤ýÞb2àºl。\n６．３．１．３ BCºlEF;<：\nａ） F~§ª}«D、TU¯°BC、¨©ª«BC、W®uN§ºlDEEFb;<；\nｂ） F)*BCb°]、°±、ºlxH=>；\nｃ） )*ßüýÞºl=>；\nｄ） ß!、ã、}¼HkaDEER=>?(¦,[¡p)*。\n６．３．１．４ 89:/BCºl、V=ºlHEFcíò5OGHî·K9:。\n６．３．２ KHI56YZ\n６．３．２．１ 89:Ì<õö;<：\nａ） ~§bª}«D、TU¯°BC、W®uN§、qN§o\"øýÞb67Ûõ.\n;<；\nｂ） ~§bª}«D、TU¯°BC、W®uN§bBCã、:ß!HkaºlER=>b\nÛõ8±;<；\nｃ） ?(0øN§/9:LM;bH<=，sBC?¶·o>·?&@ö；\nｄ） ~§Ë*cV、ＩＥＤÎ:ÍＣＲＣÓÔÊ¯°ÓA;<。\n\n犌犅／犜４０５９９—２０２１\n库七七 www.kqqw.com 提供",
+      "is_toc_page": true,
+      "is_filtered": false,
+      "filter_reason": ""
+    },
+    {
+      "page_num": 9,
+      "selected_source": "text_clean",
+      "text": "６．３．２．２ 89:¨©GH;<：\nａ） Fá@BC°]、°±、ºlx=>yo¨©ª«，ÔY¨©ë°；\nｂ） F~§¨©«,)*GH;<。\n６．３．２．３ 89:~§BQ;<。BQbÜfg¼½、m®?¶、.·¸、ÐC、>°}\nH。\n６．３．２．４ 89:.·PQ;<：\nａ） F.·(D;<；\nｂ） ~§.·¯°;b;<。\n６．３．２．５ 89:}¨©GH、67.、Ì<8±、¯°ÓA、¯°BQ、.·;bH;<FDEG\nHî，/cF·K9:。\n７ [\\hi\n７．１ LMNO\n７．１．１ 89:? @ = > I J F   K ° · 、ð ñ ·  ¡ p，K ° ·  ¡ p F f g s t · 、. t\n·。\n７．１．２ 89:FK9:GHðñ9，mIFK9:¢89:ðñLM，J¢ª}«D、TU¯°B\nC、W®uN§、qN§、¨©ª«BCðñLM。\n７．１．３ K9:、89:KL(yzV=，MNsOJ２Ｍｂｉｔ／ｓ。\n７．１．４ 89:FW=>B、N§#$.·=>PK9:。\n７．１．５ K9:F?(s/V=vwoABb89:=>bàÙ。\n７．２ hiNO\n７．２．１ 89:N§ºl、V=\\³、°]¯*、°±=>、ºlx=>、btÓÔ=>、DEER\nÛõ=>Fst·K9:。\n７．２．２ 89:BCkaDEER=>F.t·K9:。\n７．２．３ 89:BCª«)*、DEER=>、{ÂÃ=>、_à=>、OÈ=>、Ì<õöë°、¯°\nBQë°、.·;bë°Fðñ·K9:。\n８ GHIYZ\n８．１ jklm\n８．１．１ LMNOF50bLM、AB-F(，QK9:DEEFGH;<。\n８．１．２ LMfgTU;<：\nａ） NOFLDEEFGHF(:9Û7LMb500RLMS;<；\nｂ） NOF#$}0øì*¹L、ùúo¡p=>；\nｃ） NOF«LM&、ot&、Z&、0&、%#&HLMTÕPQ23。\n８．１．３ ABfgTUkl：\nａ） NOFDUl89:ABb4V·，Æ?I(JK9:b50AB；\nｂ） NOABFWX89}0øì*ª}«D、TU¯°BC、W®uN§、¨©ª«BC\nb4ÄÅ；\n\n犌犅／犜４０５９９—２０２１\n库七七 www.kqqw.com 提供",
+      "is_toc_page": false,
+      "is_filtered": false,
+      "filter_reason": ""
+    },
+    {
+      "page_num": 10,
+      "selected_source": "text_clean",
+      "text": "ｃ） NOF+MK9:F(Y2，bLMABJZ&[\\、ij、NCÔ／]HPQ；\nｄ） LM9:oàÙW®FYb}0øN§oª}«D、TU¯°BC、W®uN§、qN\n§、¨©ª«BCABLM^_、N§bÜYv、LMbÜc7H%#[`Q。\n８．１．４ F(kl：\nａ） NO¬;<Aa50bO ，fg50b、c、_à、y\n、LMGHde、LMmF[H；\nｂ） F(AabgfPQ?(50ÉcbPQ、%#göo、%#LMmà、50\nggfH¡p。\n８．２ 23YZ\n８．２．１ DEEF;<¡TU23：\nａ） Gu、Gh、GJG¸ª}«D、TU¯°BC、W®uN§、qN§、¨©ª«BC\nbU5mF[)*；\nｂ） F45h-89hºlEF{，)*ºl、Ûõ°±-°]=>；\nｃ） FBCºlEF{，BC½i*j=²。\n８．２．２ 45ºlEF;<：\nａ） F)*45#$BC¯*；\nｂ） F)*45#$N§°±ï³；\nｃ） F)*45#$dkRÔb}¨©l³=>；\nｄ） F)*45#$89:N§bV=ºl。\n８．２．３ 89／3ºlEF;<：\nａ） F)*ª}«D、TU¯°BC、W®uN§、qN§bºl-V=ºl；\nｂ） F)*BCb°]、°±、ºlxH=>；\nｃ） +Mª}«D、TU¯°BC、W®uN§-qN§bûQ2àqùú，)*ûQÝÞ\no^:bºl。\n８．２．４ BCºlEF;<：\nａ） F~§ª}«D、TU¯°BC、W®uN§ºlDEEFb;<；\nｂ） F)*BCb°]、°±、ºlxH=>；\nｃ） )*ßüýÞºl=>；\nｄ） ?(¦,[¡p)*ß!、ã、}¼HDEER=>。\n８．３ 56YZ\n８．３．１ N§mnºlGH;<：\nａ） F~§N§mnºlbopGH;<；\nｂ） ª}«D¯°BQGH、67Ì<õöH;<。\n８．３．２ K9:F<E:Ç89:b=>，ÔY}¨©EGHcF，WX}¨©B、ì*\n（¸q）H，EÞ¨©Fr:¨©Rìcí，WX}¨©ª}«D、TU¯°BC°]£¤\n4。\n８．３．３ K9:F~§.·)*、0R;bH;<。\n８．４ noYZ\n８．４．１ K9:FbBCbN§vwÉÊ、B²、cV、ÓÔÊ、®sÔYt、N§8H=>b5\n\n犌犅／犜４０５９９—２０２１\n库七七 www.kqqw.com 提供",
+      "is_toc_page": false,
+      "is_filtered": false,
+      "filter_reason": ""
+    },
+    {
+      "page_num": 11,
+      "selected_source": "text_clean",
+      "text": "OPQ-(t。\n８．４．２ K9:Fb89:àÙï³、BCÀï³、º³、V=ºlò5O。\n８．４．３ K9:Fbª}«D、TU¯°BCb°]、°±、ºlxHLMò5O。\n８．４．４ K9:/5O=>WN.bÍ`ÔY5Oëè，ëèyèo¦,c¡pòmF[\n)*。\n８．５ pqYZ\n８．５．１ K9:FVW3uBCy ＷＥＢ,p¬v.TU¸RS=>，(w+Mxchw#y.\n=>。\n８．５．２ K9:RS;<：\nａ） N§bU5mF[z{，fg45h、89h、3h、BCh=>bGu)*；\nｂ） K9:EFGH;<=>b(D、^H；\nｃ） }¨©ë°=>b(D、^、|}H；\nｄ） ª«)*b«,z{、GHyoT~H；\nｅ） .5Oëè。\n９ <ZNO\n９．１ *+NO\n９．１．１ 45c7TU¡TU%.：\nａ） 89:TU¸qKLMmF?$qTU3uBCJrHTU；\nｂ） 89:¬ô²b-V=Fa|¬bBC。\n９．１．２ K9:-89:Aa-N§FsË*TU、¿]45-4VË*TU、O r-qN§T\nU、DEEFGHN§TUHVGTU。\n９．１．３ K9:89:KbLMIJFst&、m&、Z&、%#&o«&23。\n９．２ KHI<ZNO\n９．２．１ 89:FLBC80-=>0R。\n９．２．２ 89:LM0RF、Qi、67õö、¨©GHH23，KTU23：\nａ） BCkaDEER=>0RFs[J３，0R3Fs´J２ｈ；\nｂ） K9:ðñ·=>F0RFs[J１；\nｃ） m®?¶=>F.`0R，=>F0RFs[J１Ç，0R3Fs´J２ｈ。\n９．２．３ /tàÙbBCLÕFsOJ２５５O。\n９．３ GHI<ZNO\n９．３．１ K9:0RlÕTU23：\nａ） K9:=>0RtFs[J３；\nｂ） ®à2à89LÕFs[J５１２。\n９．３．２ K9:st&TU23：\nａ） TU¸=>RS;<bIFtFsJ１ｍｉｎ；\nｂ） }¨©t，K9:áP89:ª«)*î，ÔYK¨©êëbtFsJ５ｍｉｎ。\n\n犌犅／犜４０５９９—２０２１",
+      "is_toc_page": false,
+      "is_filtered": false,
+      "filter_reason": ""
+    },
+    {
+      "page_num": 12,
+      "selected_source": "text_clean",
+      "text": "９．４ jkhi<ZNO\n９．４．１ °]¯*、°±=>、ºlx=>zBCP89:IJt-z89:PK9:IJt\nFsJ５ｓ。\n９．４．２ ª«ybðñ·=>zBCP89:IJt-z89:PK9:IJtFs\nJ１ｍｉｎ。\n９．４．３ sJ５ＭＢｙｔｅbª«)*，zBCP89:IJt-z89:PK9:IJtFs\nJ３ｍｉｎ。\n犌犅／犜４０５９９—２０２１",
+      "is_toc_page": false,
+      "is_filtered": false,
+      "filter_reason": ""
+    }
+  ]
+}

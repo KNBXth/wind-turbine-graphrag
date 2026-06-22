@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>图谱问答</title>
+    <style>
+        body {
+            font-family: "Microsoft YaHei", sans-serif;
+            margin: 0;
+            background: #f5f7fb;
+            color: #222;
+        }
+        .container {
+            width: 1180px;
+            margin: 28px auto 40px auto;
+        }
+        .header {
+            background: #1f4e79;
+            color: white;
+            padding: 28px 32px;
+            border-radius: 14px;
+        }
+        .nav {
+            margin: 20px 0;
+        }
+        .nav a {
+            display: inline-block;
+            margin-right: 12px;
+            padding: 10px 18px;
+            background: white;
+            border: 1px solid #d8e2ef;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #1f4e79;
+            font-weight: bold;
+        }
+        .box {
+            background: white;
+            padding: 20px;
+            border-radius: 14px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        input[type="text"] {
+            width: 700px;
+            padding: 10px 12px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 18px;
+            font-size: 16px;
+            background: #1f4e79;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .hint {
+            color: #666;
+            margin-top: 10px;
+            line-height: 1.8;
+        }
+        .answer {
+            background: #eef7ff;
+            padding: 16px;
+            border-radius: 10px;
+            margin-top: 18px;
+            line-height: 1.8;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 18px;
+        }
+        th, td {
+            border: 1px solid #e5eaf1;
+            padding: 10px 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+        th {
+            background: #eef4fb;
+        }
+        .evidence-block {
+            margin-bottom: 10px;
+            padding: 8px 10px;
+            background: #f8fbff;
+            border-left: 3px solid #9dbad6;
+            border-radius: 6px;
+        }
+        h1, h2 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>图谱问答</h1>
+        <p>输入简单自然语言问题，系统基于知识图谱进行查询，并返回结构化答案与证据来源</p>
+    </div>
+
+    <div class="nav">
+        <a href="/">首页</a>
+        <a href="/entity">实体查询</a>
+        <a href="/qa">图谱问答</a>
+        <a href="/graph_rag" class="nav-btn">GraphRAG问答</a>
+        <a href="/graph_view" class="nav-btn">关系图展示</a>
+        <a href="/global_graph_full" class="nav-btn">全量图谱</a>
+    </div>
+
+    <div class="box">
+        <form method="post">
+            <input type="text" name="question" placeholder="例如：电压互感器有哪些使用方法？" value="{{ question }}">
+            <button type="submit">提问</button>
+        </form>
+        <div class="hint">
+            示例问题：<br>
+            1. 电压互感器有哪些使用方法？<br>
+            2. 变压器有哪些参数要求？<br>
+            3. 变压器在什么条件下运行？<br>
+            4. 电压互感器需要什么措施？<br>
+            5. 变压器有哪些故障？<br>
+            6. 过热有哪些症状？<br>
+            7. 过热可能由什么原因引起？<br>
+            8. 过热应采取什么维护措施？<br>
+            9. 过热通过什么方法检测？
+        </div>
+    </div>
+
+    {% if question %}
+    <div class="box" style="margin-top: 20px;">
+        <h2>问题：{{ question }}</h2>
+
+        {% if results %}
+        <div class="answer">
+            <strong>问答结果：</strong><br>
+            检测到查询实体为 <strong>{{ entity_name }}</strong>，问题类型为 <strong>{{ query_type }}</strong>。<br>
+            系统共返回 <strong>{{ results|length }}</strong> 条筛选后的高相关图谱结果。<br><br>
+            <strong>系统回答：</strong>{{ summary }}
+        </div>
+
+        <table>
+            <tr>
+                <th>实体</th>
+                <th>关系</th>
+                <th>结果</th>
+                <th>证据来源</th>
+            </tr>
+            {% for row in results %}
+            <tr>
+                <td>{{ row.source_name }}</td>
+                <td>{{ row.relation_zh }}</td>
+                <td>{{ row.target_name }}</td>
+                <td>
+                    {% for ev in row.evidences %}
+                    <div class="evidence-block">
+                        <div><strong>文件：</strong>{{ ev.file_name }}</div>
+                        <div><strong>页码：</strong>{{ (ev.page_display | default('', true) | string | trim) or (ev.page_span | default('', true) | string | trim) or (ev.page_num | default('', true) | string | trim) or '未知' }}</div>
+                        <div><strong>证据：</strong>{{ ev.source_sentence }}</div>
+                    </div>
+                    {% endfor %}
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% else %}
+        <div class="answer">
+            未识别到可执行的问题模板，或图谱中暂无匹配结果。
+        </div>
+        {% endif %}
+    </div>
+    {% endif %}
+</div>
+</body>
+</html>

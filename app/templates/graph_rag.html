@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>GraphRAG问答</title>
+    <style>
+        body {
+            font-family: "Microsoft YaHei", sans-serif;
+            background: #f5f7fb;
+            margin: 0;
+            padding: 0;
+            color: #1f2937;
+        }
+        .container {
+            width: 1100px;
+            margin: 28px auto;
+        }
+        .hero {
+            background: #1f4f82;
+            color: white;
+            border-radius: 18px;
+            padding: 28px 36px;
+            margin-bottom: 18px;
+        }
+        .hero h1 {
+            margin: 0 0 10px 0;
+            font-size: 24px;
+        }
+        .hero p {
+            margin: 0;
+            font-size: 15px;
+            opacity: 0.95;
+        }
+        .nav {
+            margin-bottom: 18px;
+        }
+        .nav a {
+            display: inline-block;
+            text-decoration: none;
+            color: #1f4f82;
+            background: white;
+            border: 1px solid #d9e2ef;
+            border-radius: 10px;
+            padding: 10px 16px;
+            margin-right: 10px;
+            font-weight: 600;
+        }
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 22px 24px;
+            margin-bottom: 18px;
+            box-shadow: 0 2px 10px rgba(31, 79, 130, 0.08);
+        }
+        .card h2 {
+            margin-top: 0;
+            font-size: 18px;
+        }
+        .input-row {
+            display: flex;
+            gap: 10px;
+        }
+        input[type="text"] {
+            flex: 1;
+            padding: 12px 14px;
+            border-radius: 10px;
+            border: 1px solid #cfd9e6;
+            font-size: 16px;
+        }
+        button {
+            padding: 12px 22px;
+            border: none;
+            background: #1f4f82;
+            color: white;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .hint {
+            margin-top: 14px;
+            color: #6b7280;
+            line-height: 1.8;
+        }
+        .answer-box {
+            background: #eef5fc;
+            border-left: 5px solid #1f4f82;
+            padding: 18px 18px;
+            border-radius: 10px;
+            line-height: 1.9;
+        }
+        .card--answer {
+            border: 1px solid #c9ddf0;
+            box-shadow: 0 4px 14px rgba(31, 79, 130, 0.12);
+        }
+        .answer-box--featured {
+            background: #e8f2fb;
+            border-left-width: 6px;
+            padding: 22px 22px;
+            border-radius: 12px;
+            border: 1px solid #d0e3f4;
+            border-left: 6px solid #1f4f82;
+        }
+        .answer-box--featured .answer-main {
+            font-size: 17px;
+            line-height: 2;
+            color: #111827;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 12px;
+        }
+        th, td {
+            border: 1px solid #e5edf5;
+            padding: 10px 12px;
+            vertical-align: top;
+            text-align: left;
+        }
+        th {
+            background: #edf3f9;
+        }
+        .evidence-item {
+            background: #f8fbff;
+            border-left: 4px solid #8fb6dc;
+            padding: 12px 14px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            line-height: 1.8;
+        }
+        .evidence-item strong {
+            color: #163a63;
+            font-weight: 600;
+        }
+        .evidence-item > div:nth-child(1),
+        .evidence-item > div:nth-child(2) {
+            font-size: 14px;
+            color: #4b5563;
+        }
+        .evidence-item > div:nth-child(3) {
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px dashed #cfe0f0;
+            font-size: 15px;
+            color: #111827;
+            line-height: 1.85;
+        }
+        .evidence-item > div.small {
+            margin-top: 8px;
+            padding-top: 0;
+            border-top: none;
+        }
+        .small {
+            color: #6b7280;
+            font-size: 14px;
+        }
+        .confidence-card {
+            background: #f6f9fc;
+            border: 1px solid #dbe6f2;
+            border-radius: 10px;
+            padding: 12px 14px;
+            line-height: 1.9;
+        }
+        .result-section-title {
+            margin: 0 0 14px 0;
+            font-size: 17px;
+            font-weight: 600;
+            color: #1f4f82;
+            border-bottom: 1px solid #e5edf5;
+            padding-bottom: 8px;
+        }
+        .panel-identify {
+            font-size: 15px;
+            line-height: 2;
+        }
+        .panel-identify strong {
+            color: #374151;
+            font-weight: 600;
+        }
+        .answer-main {
+            margin: 0;
+            font-size: 16px;
+            line-height: 2;
+        }
+        .graph-summary-list {
+            margin: 0;
+            padding-left: 0;
+            list-style: none;
+            line-height: 1.85;
+        }
+        .graph-summary-list li {
+            margin-bottom: 10px;
+            padding: 10px 12px 10px 14px;
+            background: #fafcfe;
+            border-left: 3px solid #b8d4ee;
+            border-radius: 0 8px 8px 0;
+        }
+        .graph-summary-list li .small {
+            display: inline-block;
+            margin-top: 4px;
+        }
+        .section-lead {
+            margin-top: 0;
+            margin-bottom: 14px;
+            color: #6b7280;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="hero">
+        <h1>GraphRAG 问答</h1>
+        <p>基于知识图谱检索 + 文本证据补充的轻量问答原型</p>
+    </div>
+
+    <div class="nav">
+        <a href="/">首页</a>
+        <a href="/entity">实体查询</a>
+        <a href="/qa">图谱问答</a>
+        <a href="/graph_rag">GraphRAG问答</a>
+        <a href="/graph_view" class="nav-btn">关系图展示</a>
+        <a href="/global_graph_full" class="nav-btn">全量图谱</a>
+    </div>
+
+    <div class="card">
+        <h2>输入问题</h2>
+        <form method="post">
+            <div class="input-row">
+                <input type="text" name="question" placeholder="例如：变压器的作用是什么？" value="{{ result.question }}">
+                <button type="submit">提问</button>
+            </div>
+        </form>
+        <div class="hint">
+            示例问题：<br>
+            1. 变压器的作用是什么？<br>
+            2. 齿轮箱常见故障有哪些？<br>
+            3. 过热应采取什么维护措施？<br>
+            4. 电压互感器有哪些相关知识？<br>
+            5. 过热通过什么方法检测？
+        </div>
+    </div>
+
+    {% if result.answer %}
+    <div class="card">
+        <h2 class="result-section-title">一、识别结果</h2>
+        <div class="panel-identify">
+            <strong>识别实体：</strong>{{ result.entity_name }}<br>
+            <strong>识别意图：</strong>{{ result.intent }}
+        </div>
+    </div>
+
+    <div class="card card--answer">
+        <h2 class="result-section-title">二、最终回答</h2>
+        <div class="answer-box answer-box--featured">
+            <p class="answer-main">{{ result.answer }}</p>
+        </div>
+    </div>
+
+    {% if result.confidence_info %}
+    <div class="card">
+        <h2 class="result-section-title">三、回答可信度</h2>
+        <div class="confidence-card">
+            <strong>可信度等级：</strong>{{ result.confidence_info.level }}（{{ result.confidence_info.score }} 分）<br>
+            <strong>图谱命中条数：</strong>{{ result.confidence_info.graph_hit_count }}　
+            <strong>证据条数：</strong>{{ result.confidence_info.evidence_count }}　
+            <strong>来源文件数：</strong>{{ result.confidence_info.source_count }}　
+            <strong>页码信息：</strong>{{ "有" if result.confidence_info.has_page_refs else "无" }}<br>
+            <strong>说明：</strong>{{ result.confidence_info.reason }}
+        </div>
+    </div>
+    {% endif %}
+
+    {% if result.graph_results %}
+    <div class="card">
+        <h2 class="result-section-title">四、图谱依据摘要</h2>
+        <p class="section-lead">以下为本次问答使用的图谱命中关系摘要，便于核对依据。</p>
+        <ul class="graph-summary-list">
+            {% for row in result.graph_results %}
+            <li>
+                {{ row.source_name }} —[{{ row.relation_zh }}]→ {{ row.target_name }}
+                {% set pg = row.page_display or row.page_span or row.page_num %}
+                {% if row.file_name or pg %}
+                <span class="small">
+                    （{% if row.file_name %}{{ row.file_name }}{% endif %}
+                    {% if row.file_name and pg %}，{% endif %}
+                    {% if pg %}第 {{ pg }} 页{% endif %}）
+                </span>
+                {% endif %}
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+
+    {% if result.evidence_results %}
+    <div class="card">
+        <h2 class="result-section-title">五、文本证据</h2>
+        {% for e in result.evidence_results %}
+        <div class="evidence-item">
+            <div><strong>文件：</strong>{{ e.file_name }}</div>
+            <div><strong>页码：</strong>{{ e.page_display or e.page_span or e.page_num or '未知' }}</div>
+            <div><strong>证据句：</strong>{{ e.source_sentence }}</div>
+            <div class="small"><strong>关系类型：</strong>{{ e.relation }}</div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if result.graph_results %}
+    <div class="card">
+        <h2 class="result-section-title">六、图谱检索结果明细</h2>
+        <p class="section-lead">完整字段明细表，便于答辩时展开说明。</p>
+        <table>
+            <thead>
+            <tr>
+                <th>起点实体</th>
+                <th>关系</th>
+                <th>终点实体</th>
+                <th>来源文件</th>
+                <th>页码</th>
+                <th>证据句</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for row in result.graph_results %}
+            <tr>
+                <td>{{ row.source_name }}</td>
+                <td>{{ row.relation_zh }}</td>
+                <td>{{ row.target_name }}</td>
+                <td>{{ row.file_name }}</td>
+                <td>{{ row.page_display or row.page_span or row.page_num or '未知' }}</td>
+                <td>{{ row.source_sentence }}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% endif %}
+    {% endif %}
+</div>
+</body>
+</html>

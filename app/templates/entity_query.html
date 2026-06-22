@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>实体查询</title>
+    <style>
+        body {
+            font-family: "Microsoft YaHei", sans-serif;
+            margin: 0;
+            background: #f5f7fb;
+            color: #222;
+        }
+        .container {
+            width: 1180px;
+            margin: 28px auto 40px auto;
+        }
+        .header {
+            background: #1f4e79;
+            color: white;
+            padding: 28px 32px;
+            border-radius: 14px;
+        }
+        .nav {
+            margin: 20px 0;
+        }
+        .nav a {
+            display: inline-block;
+            margin-right: 12px;
+            padding: 10px 18px;
+            background: white;
+            border: 1px solid #d8e2ef;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #1f4e79;
+            font-weight: bold;
+        }
+        .box {
+            background: white;
+            padding: 20px;
+            border-radius: 14px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        input[type="text"] {
+            width: 420px;
+            padding: 10px 12px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 18px;
+            font-size: 16px;
+            background: #1f4e79;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 18px;
+        }
+        th, td {
+            border: 1px solid #e5eaf1;
+            padding: 10px 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+        th {
+            background: #eef4fb;
+        }
+        .hint {
+            color: #666;
+            margin-top: 10px;
+        }
+        .evidence-block {
+            margin-bottom: 10px;
+            padding: 8px 10px;
+            background: #f8fbff;
+            border-left: 3px solid #9dbad6;
+            border-radius: 6px;
+        }
+        h1, h2 {
+            margin-top: 0;
+        }
+        .summary {
+            background: #eef7ff;
+            padding: 14px 16px;
+            border-radius: 10px;
+            margin-top: 16px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>实体查询</h1>
+        <p>输入设备或实体名称，查询其关联关系，并展示证据来源</p>
+    </div>
+
+    <div class="nav">
+        <a href="/">首页</a>
+        <a href="/entity">实体查询</a>
+        <a href="/qa">图谱问答</a>
+        <a href="/graph_rag" class="nav-btn">GraphRAG问答</a>
+        <a href="/graph_view" class="nav-btn">关系图展示</a>
+        <a href="/global_graph_full" class="nav-btn">全量图谱</a>
+    </div>
+
+    <div class="box">
+        <form method="post">
+            <input type="text" name="entity_name" placeholder="例如：电压互感器、变压器、风力发电机组" value="{{ entity_name }}">
+            <button type="submit">查询</button>
+        </form>
+        <div class="hint">建议先查询：电压互感器、变压器、绝缘子、避雷器、发电机</div>
+    </div>
+
+    {% if entity_name %}
+    <div class="box" style="margin-top: 20px;">
+        <h2>查询结果：{{ entity_name }}</h2>
+
+        {% if results %}
+        <div class="summary">
+            共聚合得到 <strong>{{ results|length }}</strong> 条关系结果（已去重）。
+        </div>
+
+        <table>
+            <tr>
+                <th>起点实体</th>
+                <th>起点类型</th>
+                <th>关系</th>
+                <th>终点实体</th>
+                <th>终点类型</th>
+                <th>证据来源</th>
+            </tr>
+            {% for row in results %}
+            <tr>
+                <td>{{ row.source_name }}</td>
+                <td>{{ row.source_type }}</td>
+                <td>{{ row.relation_zh }}</td>
+                <td>{{ row.target_name }}</td>
+                <td>{{ row.target_type }}</td>
+                <td>
+                    {% for ev in row.evidences %}
+                    <div class="evidence-block">
+                        <div><strong>文件：</strong>{{ ev.file_name }}</div>
+                        <div><strong>页码：</strong>{{ (ev.page_display | default('', true) | string | trim) or (ev.page_span | default('', true) | string | trim) or (ev.page_num | default('', true) | string | trim) or '未知' }}</div>
+                        <div><strong>证据：</strong>{{ ev.source_sentence }}</div>
+                    </div>
+                    {% endfor %}
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% else %}
+        <p>未查询到相关结果。</p>
+        {% endif %}
+    </div>
+    {% endif %}
+</div>
+</body>
+</html>

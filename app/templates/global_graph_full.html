@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>全量知识图谱展示</title>
+    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <style>
+        body {
+            font-family: "Microsoft YaHei", sans-serif;
+            background: #f5f7fb;
+            margin: 0;
+            padding: 0;
+            color: #1f2937;
+        }
+
+        .container {
+            width: 1360px;
+            margin: 28px auto;
+        }
+
+        .hero {
+            background: #1f4f82;
+            color: white;
+            border-radius: 18px;
+            padding: 28px 36px;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 {
+            margin: 0 0 10px 0;
+            font-size: 28px;
+        }
+
+        .hero p {
+            margin: 0;
+            font-size: 15px;
+            opacity: 0.95;
+        }
+
+        .nav {
+            margin-bottom: 18px;
+        }
+
+        .nav a {
+            display: inline-block;
+            text-decoration: none;
+            color: #1f4f82;
+            background: white;
+            border: 1px solid #d9e2ef;
+            border-radius: 10px;
+            padding: 10px 16px;
+            margin-right: 10px;
+            font-weight: 600;
+        }
+
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 22px 24px;
+            margin-bottom: 18px;
+            box-shadow: 0 2px 10px rgba(31, 79, 130, 0.08);
+        }
+
+        .card h2 {
+            margin-top: 0;
+            font-size: 22px;
+            color: #1f4f82;
+        }
+
+        .tool-grid {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr 1fr;
+            gap: 16px;
+            align-items: end;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #334155;
+        }
+
+        .input, .select {
+            width: 100%;
+            box-sizing: border-box;
+            border: 1px solid #d9e2ef;
+            border-radius: 10px;
+            padding: 12px 14px;
+            font-size: 15px;
+            background: white;
+        }
+
+        .btn-row {
+            margin-top: 16px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        button {
+            border: none;
+            border-radius: 10px;
+            background: #1f4f82;
+            color: white;
+            padding: 10px 18px;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        button.secondary {
+            background: #eef5fc;
+            color: #1f4f82;
+            border: 1px solid #d9e2ef;
+        }
+
+        .legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 16px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: #f8fbff;
+            border: 1px solid #e2e8f0;
+            padding: 6px 10px;
+            border-radius: 999px;
+            font-size: 13px;
+        }
+
+        .legend-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .graph-layout {
+            display: grid;
+            grid-template-columns: 2.25fr 1fr;
+            gap: 18px;
+        }
+
+        #graph-container {
+            height: 860px;
+            border: 1px solid #d9e2ef;
+            border-radius: 14px;
+            background: #fbfdff;
+        }
+
+        .side-panel {
+            height: 860px;
+            overflow-y: auto;
+            border: 1px solid #d9e2ef;
+            border-radius: 14px;
+            background: #fbfdff;
+            padding: 16px;
+        }
+
+        .panel-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #1f4f82;
+        }
+
+        .info-box {
+            background: white;
+            border: 1px solid #e5edf5;
+            border-radius: 12px;
+            padding: 12px 14px;
+            margin-bottom: 12px;
+            line-height: 1.8;
+        }
+
+        .info-label {
+            font-weight: 700;
+            color: #334155;
+        }
+
+        .source-item {
+            background: #f8fbff;
+            border-left: 4px solid #7aa6d8;
+            padding: 10px 12px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            line-height: 1.7;
+        }
+
+        .stats-bar {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .stat-box {
+            flex: 1;
+            background: #f8fbff;
+            border: 1px solid #d9e2ef;
+            border-radius: 12px;
+            padding: 14px 16px;
+        }
+
+        .stat-box .label {
+            color: #64748b;
+            font-size: 13px;
+            margin-bottom: 6px;
+        }
+
+        .stat-box .value {
+            color: #1f4f82;
+            font-size: 28px;
+            font-weight: 800;
+        }
+
+        .hint-box {
+            background: #eef5fc;
+            border-left: 5px solid #1f4f82;
+            padding: 14px 16px;
+            border-radius: 10px;
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+
+        .small {
+            color: #64748b;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="hero">
+        <h1>全量知识图谱交互展示</h1>
+        <p>支持全量节点与关系的交互式探索，可按实体类型、关系类别筛选，并支持搜索聚焦与邻域分析</p>
+    </div>
+
+    <div class="nav">
+        <a href="/">首页</a>
+        <a href="/entity">实体查询</a>
+        <a href="/qa">图谱问答</a>
+        <a href="/graph_rag">GraphRAG问答</a>
+        <a href="/graph_view">关系图展示</a>
+        <a href="/global_graph_full">全量图谱</a>
+    </div>
+
+    <div class="card">
+        <h2>筛选与控制</h2>
+
+        <div class="hint-box">
+            为保证展示效果，系统默认显示高连接度核心节点子图。你可以切换为“显示全部”，也可以通过搜索实体、筛选实体类型和关系类别，聚焦查看图谱中的局部结构。
+        </div>
+
+        <div class="tool-grid">
+            <div class="form-group">
+                <label>搜索实体并聚焦</label>
+                <input id="search-input" class="input" type="text" placeholder="输入实体名称，如：风力发电机组、齿轮箱、过热、绝缘子">
+            </div>
+
+            <div class="form-group">
+                <label>实体类型筛选</label>
+                <select id="entity-type-select" class="select">
+                    <option value="全部">全部</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>关系类别筛选</label>
+                <select id="relation-category-select" class="select">
+                    <option value="全部">全部</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="btn-row">
+            <button onclick="showRecommended()">仅显示核心</button>
+            <button class="secondary" onclick="showAllGraph()">显示全部</button>
+            <button class="secondary" onclick="focusSearchEntity()">搜索聚焦</button>
+            <button class="secondary" onclick="showOneHopNeighbors()">显示一跳邻域</button>
+            <button class="secondary" onclick="applyFilters()">应用筛选</button>
+            <button class="secondary" onclick="resetGraph()">重置图谱</button>
+        </div>
+
+        <div class="legend">
+            <div class="legend-item"><span class="legend-dot" style="background:#A0A0A0;"></span>标准</div>
+            <div class="legend-item"><span class="legend-dot" style="background:#4F81BD;"></span>设备</div>
+            <div class="legend-item"><span class="legend-dot" style="background:#5BC0DE;"></span>部件</div>
+            <div class="legend-item"><span class="legend-dot" style="background:#D9534F;"></span>故障</div>
+            <div class="legend-item"><span class="legend-dot" style="background:#F0AD4E;"></span>症状</div>
+            <div class="legend-item"><span class="legend-dot" style="background:#8E63CE;"></span>原因</div>
+            <div class="legend-item"><span class="legend-dot" style="background:#5CB85C;"></span>措施/维护措施</div>
+            <div class="legend-item"><span class="legend-dot" style="background:#F7C948;"></span>方法/检测</div>
+            <div class="legend-item"><span class="legend-dot" style="background:#7E8AA2;"></span>参数</div>
+            <div class="legend-item"><span class="legend-dot" style="background:#6F42C1;"></span>条件</div>
+        </div>
+    </div>
+
+    <div class="stats-bar">
+        <div class="stat-box">
+            <div class="label">全量节点数</div>
+            <div class="value" id="total-node-count">0</div>
+        </div>
+        <div class="stat-box">
+            <div class="label">全量关系数</div>
+            <div class="value" id="total-edge-count">0</div>
+        </div>
+        <div class="stat-box">
+            <div class="label">当前显示节点数</div>
+            <div class="value" id="visible-node-count">0</div>
+        </div>
+        <div class="stat-box">
+            <div class="label">当前显示关系数</div>
+            <div class="value" id="visible-edge-count">0</div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>全量知识图谱</h2>
+        <div class="graph-layout">
+            <div id="graph-container"></div>
+            <div class="side-panel">
+                <div class="panel-title">详情面板</div>
+                <div id="detail-panel" class="small">
+                    点击左侧节点或关系边，可查看实体与关系详情。  
+                    建议优先使用“搜索聚焦”或“一跳邻域”模式查看具体知识。
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script id="graph-data-json" type="application/json">
+{{ graph_data | tojson | safe }}
+</script>
+
+<script>
+    const graphData = JSON.parse(
+        document.getElementById("graph-data-json").textContent
+    );
+
+    const allNodesRaw = graphData.nodes || [];
+    const allEdgesRaw = graphData.edges || [];
+    const recommendedNodeIds = new Set(graphData.recommended_node_ids || []);
+
+    const entityTypeSelect = document.getElementById("entity-type-select");
+    const relationCategorySelect = document.getElementById("relation-category-select");
+    const searchInput = document.getElementById("search-input");
+    const detailPanel = document.getElementById("detail-panel");
+
+    const totalNodeCountEl = document.getElementById("total-node-count");
+    const totalEdgeCountEl = document.getElementById("total-edge-count");
+    const visibleNodeCountEl = document.getElementById("visible-node-count");
+    const visibleEdgeCountEl = document.getElementById("visible-edge-count");
+
+    function escapeHtml(text) {
+        if (!text) return '';
+        return String(text)
+            .replaceAll('&', '&amp;')
+            .replaceAll('<', '&lt;')
+            .replaceAll('>', '&gt;');
+    }
+
+    function getPageDisplay(src) {
+        return src.page_display || src.page_span || src.page_num || '未知';
+    }
+
+    function getRelationColor(category) {
+        const colorMap = {
+            "故障": "#D9534F",
+            "症状": "#F0AD4E",
+            "原因": "#8E63CE",
+            "措施": "#5CB85C",
+            "检测": "#F7C948",
+            "方法": "#F7C948",
+            "参数": "#7E8AA2",
+            "条件": "#6F42C1",
+            "其他": "#6b7a90"
+        };
+        return colorMap[category] || "#6b7a90";
+    }
+
+    function populateFilters() {
+        (graphData.entity_type_options || []).forEach(v => {
+            const opt = document.createElement("option");
+            opt.value = v;
+            opt.textContent = v;
+            entityTypeSelect.appendChild(opt);
+        });
+
+        (graphData.relation_category_options || []).forEach(v => {
+            const opt = document.createElement("option");
+            opt.value = v;
+            opt.textContent = v;
+            relationCategorySelect.appendChild(opt);
+        });
+    }
+
+    function buildNodeMap(nodes) {
+        const mp = new Map();
+        nodes.forEach(n => mp.set(n.id, n));
+        return mp;
+    }
+
+    function convertEdges(edgeList) {
+        return edgeList.map(edge => ({
+            id: edge.id,
+            from: edge.from,
+            to: edge.to,
+            label: edge.label,
+            arrows: edge.arrows || 'to',
+            width: edge.width || 2,
+            font: {
+                align: 'middle',
+                size: 14,
+                face: 'Microsoft YaHei',
+                color: '#334155',
+                strokeWidth: 0
+            },
+            smooth: {
+                type: 'dynamic'
+            },
+            color: {
+                color: getRelationColor(edge.relation_category),
+                highlight: '#1f4f82',
+                opacity: 0.85
+            },
+            data: edge
+        }));
+    }
+
+    function computeSubgraphByNodeIds(nodeIds) {
+        const nodeIdSet = new Set(nodeIds);
+        const visibleEdges = allEdgesRaw.filter(e => nodeIdSet.has(e.from) && nodeIdSet.has(e.to));
+        const visibleNodes = allNodesRaw.filter(n => nodeIdSet.has(n.id));
+        return { visibleNodes, visibleEdges };
+    }
+
+    function computeSubgraphFromEdges(edgeList) {
+        const nodeIdSet = new Set();
+        edgeList.forEach(e => {
+            nodeIdSet.add(e.from);
+            nodeIdSet.add(e.to);
+        });
+        const visibleNodes = allNodesRaw.filter(n => nodeIdSet.has(n.id));
+        return { visibleNodes, visibleEdges: edgeList };
+    }
+
+    function applyCurrentGraph(visibleNodes, visibleEdges) {
+        nodes.clear();
+        edges.clear();
+
+        nodes.add(visibleNodes);
+        edges.add(convertEdges(visibleEdges));
+
+        visibleNodeCountEl.textContent = visibleNodes.length;
+        visibleEdgeCountEl.textContent = visibleEdges.length;
+    }
+
+    function renderNodeDetail(nodeId) {
+        const node = nodes.get(nodeId);
+        if (!node) return;
+
+        const relatedEdges = edges.get().filter(e => e.from === nodeId || e.to === nodeId);
+        const categories = [...new Set(relatedEdges.map(e => e.data?.relation_category).filter(Boolean))];
+
+        detailPanel.innerHTML = `
+            <div class="info-box">
+                <div><span class="info-label">实体名称：</span>${escapeHtml(node.label)}</div>
+                <div><span class="info-label">实体类型：</span>${escapeHtml(node.entity_type_zh || node.entity_type || '实体')}</div>
+                <div><span class="info-label">连接度：</span>${escapeHtml(String(node.degree || 0))}</div>
+                <div><span class="info-label">当前可见关联边：</span>${relatedEdges.length}</div>
+                <div><span class="info-label">涉及关系类别：</span>${escapeHtml(categories.join("、") || "无")}</div>
+            </div>
+            <div class="info-box">
+                <div class="info-label">操作建议</div>
+                <div class="small">
+                    可使用“显示一跳邻域”查看该实体附近知识；也可配合实体类型与关系类别筛选进一步聚焦。
+                </div>
+            </div>
+        `;
+    }
+
+    function renderEdgeDetail(edgeId) {
+        const edge = edges.get(edgeId);
+        if (!edge || !edge.data) return;
+
+        const d = edge.data;
+        let html = `
+            <div class="info-box">
+                <div><span class="info-label">起点实体：</span>${escapeHtml(d.from)}</div>
+                <div><span class="info-label">关系类型：</span>${escapeHtml(d.relation_full || d.label)}</div>
+                <div><span class="info-label">关系类别：</span>${escapeHtml(d.relation_category || '其他')}</div>
+                <div><span class="info-label">终点实体：</span>${escapeHtml(d.to)}</div>
+                <div><span class="info-label">证据条数：</span>${escapeHtml(String(d.source_count || 0))}</div>
+            </div>
+        `;
+
+        if (d.sources && d.sources.length > 0) {
+            html += `<div class="panel-title" style="font-size:16px; margin-top:8px;">证据来源</div>`;
+            d.sources.forEach(src => {
+                html += `
+                    <div class="source-item">
+                        <div><strong>文件：</strong>${escapeHtml(src.file_name || '')}</div>
+                        <div><strong>页码：</strong>${escapeHtml(String(getPageDisplay(src)))}</div>
+                        <div><strong>证据句：</strong>${escapeHtml(src.source_sentence || '')}</div>
+                    </div>
+                `;
+            });
+        } else {
+            html += `<div class="info-box small">暂无证据来源。</div>`;
+        }
+
+        detailPanel.innerHTML = html;
+    }
+
+    const container = document.getElementById("graph-container");
+    const nodes = new vis.DataSet([]);
+    const edges = new vis.DataSet([]);
+
+    const data = { nodes, edges };
+
+    const options = {
+        autoResize: true,
+        physics: {
+            enabled: true,
+            stabilization: {
+                iterations: 300
+            },
+            barnesHut: {
+                gravitationalConstant: -2800,
+                centralGravity: 0.15,
+                springLength: 140,
+                springConstant: 0.045,
+                damping: 0.24
+            }
+        },
+        interaction: {
+            hover: true,
+            dragNodes: true,
+            dragView: true,
+            zoomView: true,
+            multiselect: false
+        },
+        nodes: {
+            shape: "dot",
+            borderWidth: 2,
+            font: {
+                size: 16,
+                face: "Microsoft YaHei",
+                color: "#1f2937",
+                strokeWidth: 0
+            }
+        },
+        edges: {
+            arrows: {
+                to: { enabled: true, scaleFactor: 0.7 }
+            },
+            font: {
+                size: 13,
+                align: "middle",
+                face: "Microsoft YaHei",
+                color: "#334155",
+                strokeWidth: 0
+            },
+            selectionWidth: 3
+        },
+        layout: {
+            improvedLayout: true
+        }
+    };
+
+    const network = new vis.Network(container, data, options);
+
+    function showRecommended() {
+        const sub = computeSubgraphByNodeIds(recommendedNodeIds);
+        applyCurrentGraph(sub.visibleNodes, sub.visibleEdges);
+    }
+
+    function showAllGraph() {
+        applyCurrentGraph(allNodesRaw, allEdgesRaw);
+    }
+
+    function focusSearchEntity() {
+        const keyword = (searchInput.value || "").trim();
+        if (!keyword) return;
+
+        const matchedNode = allNodesRaw.find(n => n.id === keyword || n.label === keyword || (n.label || "").includes(keyword));
+        if (!matchedNode) {
+            detailPanel.innerHTML = `<div class="info-box">未找到实体：${escapeHtml(keyword)}</div>`;
+            return;
+        }
+
+        showNodeNeighborhood(matchedNode.id);
+    }
+
+    function showNodeNeighborhood(nodeId) {
+        const relatedEdges = allEdgesRaw.filter(e => e.from === nodeId || e.to === nodeId);
+        const nodeIdSet = new Set([nodeId]);
+
+        relatedEdges.forEach(e => {
+            nodeIdSet.add(e.from);
+            nodeIdSet.add(e.to);
+        });
+
+        const visibleNodes = allNodesRaw.filter(n => nodeIdSet.has(n.id));
+        applyCurrentGraph(visibleNodes, relatedEdges);
+
+        setTimeout(() => {
+            network.focus(nodeId, {
+                scale: 1.0,
+                animation: {
+                    duration: 800,
+                    easingFunction: "easeInOutQuad"
+                }
+            });
+            renderNodeDetail(nodeId);
+        }, 200);
+    }
+
+    function showOneHopNeighbors() {
+        const keyword = (searchInput.value || "").trim();
+        if (!keyword) return;
+
+        const matchedNode = allNodesRaw.find(n => n.id === keyword || n.label === keyword || (n.label || "").includes(keyword));
+        if (!matchedNode) {
+            detailPanel.innerHTML = `<div class="info-box">未找到实体：${escapeHtml(keyword)}</div>`;
+            return;
+        }
+
+        showNodeNeighborhood(matchedNode.id);
+    }
+
+    function applyFilters() {
+        const selectedType = entityTypeSelect.value;
+        const selectedCategory = relationCategorySelect.value;
+
+        let edgeFiltered = [...allEdgesRaw];
+
+        if (selectedCategory !== "全部") {
+            edgeFiltered = edgeFiltered.filter(e => e.relation_category === selectedCategory);
+        }
+
+        let nodeSet = new Set();
+        edgeFiltered.forEach(e => {
+            nodeSet.add(e.from);
+            nodeSet.add(e.to);
+        });
+
+        let nodeFiltered = allNodesRaw.filter(n => nodeSet.has(n.id));
+
+        if (selectedType !== "全部") {
+            nodeFiltered = nodeFiltered.filter(n => n.entity_type_zh === selectedType);
+            const allowed = new Set(nodeFiltered.map(n => n.id));
+            edgeFiltered = edgeFiltered.filter(e => allowed.has(e.from) || allowed.has(e.to));
+
+            const finalNodeSet = new Set();
+            edgeFiltered.forEach(e => {
+                finalNodeSet.add(e.from);
+                finalNodeSet.add(e.to);
+            });
+            nodeFiltered = allNodesRaw.filter(n => finalNodeSet.has(n.id));
+        }
+
+        applyCurrentGraph(nodeFiltered, edgeFiltered);
+    }
+
+    function resetGraph() {
+        searchInput.value = "";
+        entityTypeSelect.value = "全部";
+        relationCategorySelect.value = "全部";
+        showRecommended();
+        detailPanel.innerHTML = `
+            点击左侧节点或关系边，可查看实体与关系详情。<br>
+            建议优先使用“搜索聚焦”或“一跳邻域”模式查看具体知识。
+        `;
+    }
+
+    network.on("click", function(params) {
+        if (params.nodes.length > 0) {
+            renderNodeDetail(params.nodes[0]);
+            return;
+        }
+        if (params.edges.length > 0) {
+            renderEdgeDetail(params.edges[0]);
+            return;
+        }
+    });
+
+    totalNodeCountEl.textContent = allNodesRaw.length;
+    totalEdgeCountEl.textContent = allEdgesRaw.length;
+
+    populateFilters();
+    showRecommended();
+</script>
+</body>
+</html>

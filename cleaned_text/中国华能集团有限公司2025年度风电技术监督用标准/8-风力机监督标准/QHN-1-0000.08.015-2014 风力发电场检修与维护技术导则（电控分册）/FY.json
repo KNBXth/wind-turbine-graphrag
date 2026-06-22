@@ -1,0 +1,32 @@
+{
+  "file_stem": "FY",
+  "file_name": "FY.pdf",
+  "full_path": "E:\\WORK\\data\\raw_pdf\\中国华能集团有限公司2025年度风电技术监督用标准\\8-风力机监督标准\\QHN-1-0000.08.015-2014 风力发电场检修与维护技术导则（电控分册）\\FY.pdf",
+  "relative_path": "中国华能集团有限公司2025年度风电技术监督用标准\\8-风力机监督标准\\QHN-1-0000.08.015-2014 风力发电场检修与维护技术导则（电控分册）\\FY.pdf",
+  "level_1_dir": "中国华能集团有限公司2025年度风电技术监督用标准",
+  "level_2_dir": "8-风力机监督标准",
+  "level_3_dir": "QHN-1-0000.08.015-2014 风力发电场检修与维护技术导则（电控分册）",
+  "page_count": 1,
+  "cleaned_pages": [
+    {
+      "page_num": 1,
+      "is_toc_page": false,
+      "text": "ICS 29.240\n备案号：CEC 544-2011\n\n中国华能集团公司企业标准\nQ / HN—1—0000.08.015 — 2014\n\n风力发电场检修与维护技术导则\n（电 控 分 册）\n\n2014-××-××发布\n2014-××-××实施\n\n中国华能集团公司 发 布\n\nQ/HN"
+    }
+  ],
+  "cleaned_full_text": "ICS 29.240\n备案号：CEC 544-2011\n\n中国华能集团公司企业标准\nQ / HN—1—0000.08.015 — 2014\n\n风力发电场检修与维护技术导则\n（电 控 分 册）\n\n2014-××-××发布\n2014-××-××实施\n\n中国华能集团公司 发 布\n\nQ/HN",
+  "text_quality": {
+    "quality_label": "high_quality",
+    "quality_reason": "readable_chinese_text",
+    "visible_chars": 117,
+    "chinese_chars": 47,
+    "english_chars": 12,
+    "digits": 34,
+    "abnormal_chars": 0,
+    "punctuation_noise": 0,
+    "garbled_segments": 0,
+    "chinese_ratio": 0.4017,
+    "abnormal_ratio": 0.0,
+    "noise_ratio": 0.0
+  }
+}
