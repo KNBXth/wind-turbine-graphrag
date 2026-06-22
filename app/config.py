@@ -29,7 +29,7 @@ RELATIONS_FILE = META_DIR / "relations_v3_1.jsonl"
 # 提交/答辩版建议默认关闭；需要演示时再手动开启并填写 API Key
 LLM_ENABLED = True
 # 出于安全原因，请勿在代码仓库中提交真实 API Key
-LLM_API_KEY = "sk-90c8bd039dca487386b01a60a9b5cc79"
+LLM_API_KEY = "your-api-key-here"
 # 只需要配置到 /v1，代码中会自动拼接 /chat/completions
 LLM_BASE_URL = "https://api.deepseek.com/v1"
 LLM_MODEL_NAME = "deepseek-chat"
